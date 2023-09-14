@@ -1,151 +1,88 @@
+<select>
+    <option>gradebook</option>
+    <option>Quiz</option>
+</select>
+<button>Import</button>
+<select>
+    <option>Export</option>
+    <option>Unpublished</option>
+</select>
+<button>Configure</button>
+
+
 <table width="100%">
     <tbody>
         <tr>
-            <td>
-                <ul>
-                    <li>
-                        <a href="#">Northeastern</a>
-                    </li>
-                    <li>
-                        <a href="#">Account</a>
-                    </li>
-                    <li>
-                        <a href="#">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#">Courses</a>
-                    </li>
-                    <li>
-                        <a href="#">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="#">Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#">History</a>
-                    </li>
-                    <li>
-                        <a href="#">Studio</a>
-                    </li>
-                    <li>
-                        <a href="#">Commonds</a>
-                    </li>
-                    <li>
-                        <a href="#">Help</a>
-                    </li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>
-                        <a href="/Kanbas/Courses/Home">Home</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Modules">Modules</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Piazza">Piazza</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Zoom">Zoom</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Quizzes">Quizzes</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Assignments">Assignments</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Grades">Grades</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/People">People</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Panopto">Panopto Video</a>
-                    </li>
-            </td>
-            <td>
-                <select>
-                    <option>gradebook</option>
-                    <option>Quiz</option>
-                </select>
-                <button>Import</button>
-                <select>
-                    <option>Export</option>
-                    <option>Unpublished</option>
-                </select>
-                <button>Configure</button>
-                <br><br>
-                <h3>Student Name </h3>
-                <input title="Type the name of the student" placeholder="Search Students" />
-                <br>
-                <h3>Assignment Name </h3>
-                <input title="Search Assignment" placeholder="Search Assignements" />
-                <br><br>
-                <button>Apply Filter</button></td>
-
-                <table width="50%" border="1">
-                    <thead>
-                        <tr>
-                            <td>Student Name</td>
-                            <td>A1- HTML</td>
-                            <td>A2 - CSS</td>
-                            <td>A3 - JavaScript</td>
-                            <td>A4 - React </td>
-                            <td>A4 Node </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jae Butler</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Bob Swag</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                        </tr>
-
-                        <tr>
-                            <td>Julee Hwang</td>
-                            <td>70%</td>
-                            <td>100%</td>
-                            <td>20%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Matt wang</td>
-                            <td>70%</td>
-                            <td>100%</td>
-                            <td>20%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr></tr>
-                    </tfoot>
-                    </table>
-
+            <td> <b>Student Name</b> <br>
+                <input title="Type the name of the student" placeholder="Search Students" /> <br>
             </td>
 
-          
-            
+
+
+        </tr>
         <tr>
-            
+            <td><b>Assignment Name</b> <br>
+                <input title="Search Assignment" placeholder="Search Assignements" /> <br>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td><button>Apply Filter</button></td>
+        </tr>
+    <tbody>
+</table>
+<br>
+
+<table width="100%" border="1">
+    <thead>
+        <tr>
+            <td>Student Name</td>
+            <td>A1- HTM <br> Out of 100</td>
+            <td>A2 - CSS<br> Out of 100</td>
+            <td>A3 - JavaScript<br> Out of 100</td>
+            <td>A4 - React <br> Out of 100</td>
+            <td>A4 Node <br> Out of 100</td>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        <tr>
+            <td>Jae Butler</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>Bob Swag</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>100%</td>
         </tr>
 
+        <tr>
+            <td>Julee Hwang</td>
+            <td>70%</td>
+            <td>100%</td>
+            <td>20%</td>
+            <td>100%</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>Matt wang</td>
+            <td>70%</td>
+            <td>100%</td>
+            <td>20%</td>
+            <td>100%</td>
+            <td>100%</td>
         </tr>
     </tbody>
+    <tfoot>
+        <tr></tr>
+    </tfoot>
 
 </table>
- 
