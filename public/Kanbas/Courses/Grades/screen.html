@@ -1,115 +1,137 @@
-<table width="100%">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="/Kanbas/">Northeastern</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Account/Profile/screen.html">Account</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                    </li>
-                    <li>
-                        <a href="#">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="#">Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#">History</a>
-                    </li>
-                    <li>
-                        <a href="#">Studio</a>
-                    </li>
-                    <li>
-                        <a href="#">Commonds</a>
-                    </li>
-                    <li>
-                        <a href="#">Help</a>
-                    </li>
-                </ul>
+<html>
 
-            </td>
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Piazza">Piazza</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Zoom">Zoom</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Quizzes">Quizzes</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/People">People</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Panopto">Panopto Video</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Setting/screen.html">Setting</a>
-                    </li>
-
-                </ul>
-
-
-            </td>
-            <td>
-                <select>
-                    <option>gradebook</option>
-                    <option>Quiz</option>
-                </select>
-                <button>Import</button>
-                <select>
-                    <option>Export</option>
-                    <option>Unpublished</option>
-                </select>
-                <button>Configure</button>
-
-
-                <table width="100%">
-                    <tbody>
-                        <tr>
-                            <td> <b> Student Name</b> <br>
-                                <input title="Type the name of the student" placeholder="Search Students" /> <br>
-                            </td>
+<head>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../KanbasNavigation/index.css">
+    <link rel="stylesheet" href="../CourseNavigation/index.css">
+    <link rel="stylesheet" href="../../../Vendor/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../../../Vendor/fontawesome4/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../Vendor/css/bootstrap.min.css">
 
 
 
-                        </tr>
-                        <tr>
-                            <td><b>Assignment Name</b> <br>
-                                <input title="Search Assignment" placeholder="Search Assignements" /> <br>
-                            </td>
-                        </tr>
+
+</head>
+
+<body>
+
+    <div class="wd-flex-row-container ">
+        <div class="wd-bg-color-black">
+            <ul class="wd-kanbas-navigation">
+                <!-- <li>
+                    <a href="/Kanbas/">Northeastern</a>
+                  </li> -->
+
+                <!-- <li class="wd-active"></li> -->
+                <li>
+                    <a href="/Kanbas/Account/Profile/screen.html">Account</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Dashboard/screen.html">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
                         <br>
-                        <tr>
-                            <td><button>Apply Filter</button></td>
-                        </tr>
-                    <tbody>
-                </table>
-                <br>
+                        Dashboard</a>
+                </li>
+                <li class="wd-active">
+                    <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Calendar/screen.html">
+                        <i class="far fa-calendar-alt" aria-hidden="true"></i><br>
+                        Calendar</a>
+                </li>
+                <li>
+                    <a href="#">Inbox</a>
+                </li>
+                <li>
+                    <a href="#">History</a>
+                </li>
+                <li>
+                    <a href="#">Studio</a>
+                </li>
+                <li>
+                    <a href="#">Commonds</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="wd-course-navigation">
+                <li>
+                    <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Piazza">Piazza</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Zoom">Zoom</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Quizzes">Quizzes</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                </li>
+                <li class="wd-active">
+                    <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/People">People</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Panopto">Panopto Video</a>
+                </li>
+                <li>
+                    <a href="/Kanbas/Courses/Setting/screen.html">Setting</a>
+                </li>
 
-                <table width="100%" border="1">
+            </ul>
+        </div>
+
+        <div class="wd-flex-grow-1">
+
+            <select>
+                <option>gradebook</option>
+                <option>Quiz</option>
+            </select>
+            <button>Import</button>
+            <select>
+                <option>Export</option>
+                <option>Unpublished</option>
+            </select>
+            <button>Configure</button>
+
+
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td> <b> Student Name</b> <br>
+                            <input title="Type the name of the student" placeholder="Search Students" /> <br>
+                        </td>
+
+
+
+                    </tr>
+                    <tr>
+                        <td><b>Assignment Name</b> <br>
+                            <input title="Search Assignment" placeholder="Search Assignements" /> <br>
+                        </td>
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><button>Apply Filter</button></td>
+                    </tr>
+                <tbody>
+            </table>
+            <br>
+
+            <div class="table-responsive">
+                <table class="table">
                     <thead>
                         <tr>
                             <td>Student Name</td>
@@ -128,7 +150,7 @@
                             <td>100%</td>
                             <td>100%</td>
                             <td>100%</td>
-                            <td>100%</td>
+                            <td><input type="number" value="100" min="0" max="100"></td>
                             <td>100%</td>
                         </tr>
                         <tr>
@@ -136,7 +158,7 @@
                             <td>100%</td>
                             <td>100%</td>
                             <td>100%</td>
-                            <td>100%</td>
+                            <td><input type="number" value="100" min="0" max="100"></td>
                             <td>100%</td>
                         </tr>
 
@@ -144,7 +166,7 @@
                             <td>Julee Hwang</td>
                             <td>70%</td>
                             <td>100%</td>
-                            <td>20%</td>
+                            <td><input type="number" value="0" min="0" max="100"></td>
                             <td>100%</td>
                             <td>100%</td>
                         </tr>
@@ -162,13 +184,31 @@
                     </tfoot>
 
                 </table>
-            </td>
+
+            </div>
 
 
 
-        <tr>
 
 
-    </tbody>
+
+        </div>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+</tbody>
 
 </table>
