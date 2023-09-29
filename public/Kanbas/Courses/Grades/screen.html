@@ -1,214 +1,231 @@
 <html>
-
-<head>
-    <link rel="stylesheet" href="../../../style.css">
-    <link rel="stylesheet" href="../../KanbasNavigation/index.css">
-    <link rel="stylesheet" href="../CourseNavigation/index.css">
-    <link rel="stylesheet" href="../../../Vendor/fontawesome/css/all.css">
-    <link rel="stylesheet" href="../../../Vendor/fontawesome4/css/font-awesome.css">
-    <link rel="stylesheet" href="../../../Vendor/css/bootstrap.min.css">
-
-
-
-
-</head>
-
-<body>
-
-    <div class="wd-flex-row-container ">
-        <div class="wd-bg-color-black">
-            <ul class="wd-kanbas-navigation">
-                <!-- <li>
-                    <a href="/Kanbas/">Northeastern</a>
-                  </li> -->
-
-                <!-- <li class="wd-active"></li> -->
-                <li>
-                    <a href="/Kanbas/Account/Profile/screen.html">Account</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Dashboard/screen.html">
-                        <i class="fa fa-tachometer" aria-hidden="true"></i>
-                        <br>
-                        Dashboard</a>
-                </li>
-                <li class="wd-active">
-                    <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Calendar/screen.html">
-                        <i class="far fa-calendar-alt" aria-hidden="true"></i><br>
-                        Calendar</a>
-                </li>
-                <li>
-                    <a href="#">Inbox</a>
-                </li>
-                <li>
-                    <a href="#">History</a>
-                </li>
-                <li>
-                    <a href="#">Studio</a>
-                </li>
-                <li>
-                    <a href="#">Commonds</a>
-                </li>
-                <li>
-                    <a href="#">Help</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <ul class="wd-course-navigation">
-                <li>
-                    <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Piazza">Piazza</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Zoom">Zoom</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Quizzes">Quizzes</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                </li>
-                <li class="wd-active">
-                    <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/People">People</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Panopto">Panopto Video</a>
-                </li>
-                <li>
-                    <a href="/Kanbas/Courses/Setting/screen.html">Setting</a>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="wd-flex-grow-1">
-
-            <select>
-                <option>gradebook</option>
-                <option>Quiz</option>
-            </select>
-            <button>Import</button>
-            <select>
-                <option>Export</option>
-                <option>Unpublished</option>
-            </select>
-            <button>Configure</button>
+  <head>
+    <link rel="stylesheet" href="../../../Vendor/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../../Vendor/fontawesome/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Vendor/fontawesome4/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
 
-            <table width="100%">
-                <tbody>
-                    <tr>
-                        <td> <b> Student Name</b> <br>
-                            <input title="Type the name of the student" placeholder="Search Students" /> <br>
-                        </td>
-
-
-
-                    </tr>
-                    <tr>
-                        <td><b>Assignment Name</b> <br>
-                            <input title="Search Assignment" placeholder="Search Assignements" /> <br>
-                        </td>
-                    </tr>
-                    <br>
-                    <tr>
-                        <td><button>Apply Filter</button></td>
-                    </tr>
-                <tbody>
-            </table>
-            <br>
-
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <td>Student Name</td>
-                            <td>A1- HTM <br> Out of 100</td>
-                            <td>A2 - CSS<br> Out of 100</td>
-                            <td>A3 - JavaScript<br> Out of 100</td>
-                            <td>A4 - React <br> Out of 100</td>
-                            <td>A4 Node <br> Out of 100</td>
-                        </tr>
-                    </thead>
-
-
-                    <tbody>
-                        <tr>
-                            <td>Jae Butler</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td><input type="number" value="100" min="0" max="100"></td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Bob Swag</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                            <td><input type="number" value="100" min="0" max="100"></td>
-                            <td>100%</td>
-                        </tr>
-
-                        <tr>
-                            <td>Julee Hwang</td>
-                            <td>70%</td>
-                            <td>100%</td>
-                            <td><input type="number" value="0" min="0" max="100"></td>
-                            <td>100%</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Matt wang</td>
-                            <td>70%</td>
-                            <td>100%</td>
-                            <td>20%</td>
-                            <td>100%</td>
-                            <td>100%</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr></tr>
-                    </tfoot>
-
-                </table>
-
+  <body>
+    
+    <div class="container-fluid wd-container-overflow">
+        <div class="row">
+          <nav class="navbar navbar-light bg-white" style="margin-left: 30px; display: flex;">
+            <div class="container" style="display: flex;flex-direction: row;align-content: stretch;justify-content: flex-start;">
+              <a class="btn btn-primary" style="color:red; background-color: white; border: 0px; margin-left: 0px;" href="../../KanbasNavigation/index.html" role="button"><i class="fas fa-bars" ></i></a>
+             
+              <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item" style="margin-left: 5px;"><a href="#" style="color: red; text-decoration: none;">CS5610 124785.02464112</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Grades</li>
+                </ol>
+              </nav>
+              
             </div>
+           
+              
+          </nav>
+          <!-- <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-light shadow-3 p-4">
+              <button class="btn btn-link btn-block border-bottom m-0">Link 1</button>
+              <button class="btn btn-link btn-block border-bottom m-0">Link 2</button>
+              <button class="btn btn-link btn-block m-0">Link 3</button>
+            </div>
+          </div> -->
+          
+    
+          </nav>
+          <hr>
+            <div class=" col-2 list-group wd-kanbas-navigation  d-none d-md-block">
+                <a
+                  href="/Kanbas/Account/Profile/screen.html"
+                  class="list-group-item list-group-item-action " 
+                >
+                  <i class="fa fa-user-circle-o" aria-hidden="true" ></i>
+                  <br />
+                  Account
+                </a>
+                <a
+                  href="/Kanbas/Dashboard/screen.html"
+                  class="list-group-item list-group-item-action"
+                >
+                  <i class="fa fa-tachometer" aria-hidden="true"></i>
+                  <br />
+                  Dashboard
+                </a>
+                <a
+                  href="/Kanbas/Courses/Home/screen.html"
+                  class="list-group-item list-group-item-action active"
+                >
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <br />
+                  Courses</a
+                >
+                <a
+                  href="/Kanbas/Calendar/screen.html"
+                  class="list-group-item list-group-item-action"
+                  ><i class="far fa-calendar-alt" aria-hidden="true"></i><br />
+                  Calendar</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-inbox" aria-hidden="true"></i> <br />
+                  Inbox</a
+                >
+                <a href="#" class="list-group-item list-group-item-action"
+                  ><i class="fa fa-history" aria-hidden="true"></i> <br />
+                  History</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-television" aria-hidden="true"> </i> <br />
+                  Studio</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-history" aria-hidden="true"></i> <br />
+                  History</a
+                >
+            
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-users" aria-hidden="true"></i> <br />
+            
+                  Groups</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-info-circle" aria-hidden="true"></i><br />
+                  Help</a
+                >
+            </div>
+            <div class="col-3 d d-none d-md-block">
+              <div class="list-group wd-course-navigation">
+                <a href="/Kanbas/Courses/Home/screen.html" class="list-group-item list-group-item-action" aria-current="true">
+                  Home
+                </a>
+                <a href="/Kanbas/Courses/Modules/screen.html" class="list-group-item list-group-item-action">Modules</a>
+                <a href="/Kanbas/Courses/Assignments/screen.html" class="list-group-item list-group-item-action">Assignments</a>
+                <a href="/Kanbas/Courses/Grades/screen.html" class="list-group-item list-group-item-action active ">Grades</a>
+                <a href="/Kanbas/Courses/People" class="list-group-item list-group-item-action">People</a>
+                <a href="/Kanbas/Courses/Piazza" class="list-group-item list-group-item-action">Piazza</a>
+                <a href="/Kanbas/Courses/Zoom" class="list-group-item list-group-item-action">Zoom</a>
+                <a href="/Kanbas/Courses/Quizzes" class="list-group-item list-group-item-action">Quizzes</a>
+                <a href="/Kanbas/Courses/Setting/screen.html" class="list-group-item list-group-item-action">Setting</a>
+              
+                <a href="/Kanbas/Courses/Panopto" class="list-group-item list-group-item-action">Panopto Video</a>
+              </div>
+            </div>
+            
+            
+              
+            <div class="col-7">
+              <div class="container">
+                <div class="row">
+                  <div class="d-flex flex-row-reverse bg-white">
+                    <button type="button" class="btn btn-secondary btn-sm opacity-75" style="margin-left: 5px;"> <i class="fa fa-cog" aria-hidden="true"></i></i>
+                        <button type="button" class="btn btn-secondary opacity-75 btn-sm "> <i class="fa fa-cloud-upload" aria-hidden="true"></i> export</button>
 
+                        
+                      
+                        <button type="button" class="btn btn-secondary btn-sm opacity-75" style="margin-right: 5px;"> <i class="fa fa-cloud-upload" aria-hidden="true"></i> import</button>
 
+                  </div>
+                  
+                  
+                    <div class=" d-flex flex-row bg-white d-md-12">
+                        <div class="flex-fill ">
+                            <label for="exampleFormControlInput1" class="form-label">Search Student </label><i class="fa fa-search" aria-hidden="true"></i>
+                            <input type="text" class="form-control wd-50" id="exampleFormControlInput1" placeholder="Search Student" >
+                          </div>
+                          <div class="flex-fill">
+                            <label for="exampleFormControlInput1" class="form-label">Assignment Names </label><i class="fa fa-search" aria-hidden="true"></i>
+                            <input type="text" class="form-control wd-50" id="exampleFormControlInput1" placeholder="Search Student" >
+                          </div>
+                    </div>
+                    <div class=" d-flex flex-row bg-white d-md-12">
+                        <div class="flex ">
+                            <button type="button" class="btn btn-secondary" style="margin-top: 5px;"><i class="fa fa-filter" aria-hidden="true"></i> Apply Filter</button>
+                          </div>
+                          
+                    </div>
+                    
+                </div>
+                  <hr>
 
+                  
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="bg-secondary ">
+                            <tr>
+                                <th>Student Name</th>
+                                <th>A1 - HTM<br>Out of 100</th>
+                                <th>A2 - CSS<br>Out of 100</th>
+                                <th>A3 - JavaScript<br>Out of 100</th>
+                                <th>A4 - React<br>Out of 100</th>
+                                <th>A4 Node<br>Out of 100</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="wd-name-red">Jae Butler</td>
+                                <td>100%</td>
+                                <td>100%</td>
+                                <td>100%</td>
+                                <td><input type="number" class="form-control" value="100" min="0" max="100"></td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td class="wd-name-red">Bob Swag</td>
+                                <td>100%</td>
+                                <td>100%</td>
+                                <td>100%</td>
+                                <td><input type="number" class="form-control" value="100" min="0" max="100"></td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td class="wd-name-red">Julee Hwang</td>
+                                <td>70%</td>
+                                <td>100%</td>
+                                <td><input type="number" class="form-control" value="0" min="0" max="100"></td>
+                                <td>100%</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr>
+                                <td class="wd-name-red">Matt Wang</td>
+                                <td>70%</td>
+                                <td>100%</td>
+                                <td>20%</td>
+                                <td>100%</td>
+                                <td>100%</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr></tr>
+                        </tfoot>
+                    </table>
+                </div>
+                
+                
+            </div>
+              
 
+            
 
+              
 
+            
+
+   
+            </div>
+        
         </div>
-
-
-
-
     </div>
-
+    
+  </body>
+</html>
 
 </body>
 
 </html>
-
-
-
-
-
-
-</tbody>
-
-</table>

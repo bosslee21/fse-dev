@@ -1,0 +1,87 @@
+.wd-dashboard {
+    width: 270px;
+    height: 200px;
+}
+.wd-dashboard-grid .col {
+    width: 270px;
+    margin: 15px;
+}
+
+.wd-card-img-top {
+    width: auto;
+    height: 180px;
+}
+
+
+
+.wd-kanbas-navigation.list-group {
+    border-radius: 0;
+    width: 85px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+/* list group item inside course navigation class then apply */
+.wd-kanbas-navigation .list-group-item {
+  
+    color: red;
+    text-decoration: none;
+    background-color: black;
+    border: none;
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 5px;
+   
+}
+
+.wd-kanbas-navigation .list-group-item.active  {
+    
+    color: red;
+    background-color: white;
+    border-color: white;;
+    border: 2px solid white
+
+}
+
+
+.wd-container {
+    width: 200px;
+    margin-left: 20px;
+}
+.wd-account-navigation.list-group {
+    border-radius: 0;
+}
+/* list group item inside course navigation class then apply */
+.wd-account-navigation .list-group-item {
+    padding-bottom: 15px;
+    padding-top: 0;
+    color: red;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+    padding-left: 8px;
+}
+
+.wd-course-navigation.list-group {
+    border-radius: 0;
+}
+/* list group item inside course navigation class then apply */
+.wd-course-navigation .list-group-item {
+  
+    color: red;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+   
+}
+
+.wd-course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border-color: white;;
+    border-left: 2px solid black;
+
+}
+
+.wd-container-overflow {
+    overflow: hidden;
+}

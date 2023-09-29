@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/public/Vendor/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+        <h1 id="welcome">Welcome to JavaScipt</h1>
+        <script src="./index.js" module></script>
+        <h2 id="hello"> hello, how are you doing?</h2>
+      
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus optio
+        dolorem ullam error dolorum sequi, doloremque deserunt praesentium
+        accusamus amet soluta rem molestias provident similique, illum unde
+        ipsam. Eum, laudantium?
+      </p>
+    </div>
+
+    <script>
+        const welcome = document.getElementById("welcome");
+        welcome.innerHTML = "Goodbye World";
+
+      alert("Hello");
+      document.write("Hello World");
+      
+      const todos = [
+        {
+          id: 1,
+          text: "Take out trash",
+          isCompleted: true,
+        },
+        {
+          id: 2,
+          text: "Meeting with boss",
+          isCompleted: true,
+        },
+        {
+          id: 3,
+          text: "Dentist appt",
+          isCompleted: false,
+        },
+      ];
+      todos.forEach(function (todo) {
+        document.write("<li>" + todo.text + "</li>");
+      });
+    </script>
+  </body>
+</html>

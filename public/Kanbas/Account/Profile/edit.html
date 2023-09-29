@@ -1,135 +1,220 @@
-<table width="100%">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="/Kanbas/">Northeastern</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Account/Profile/screen.html">Account</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                    </li>
-                    <li>
-                        <a href="#">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="#">Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#">History</a>
-                    </li>
-                    <li>
-                        <a href="#">Studio</a>
-                    </li>
-                    <li>
-                        <a href="#">Commonds</a>
-                    </li>
-                    <li>
-                        <a href="#">Help</a>
-                    </li>
-                </ul>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../../Vendor/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="../../../Vendor/fontawesome/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../../../Vendor/fontawesome4/css/font-awesome.css"
+    />
+  </head>
 
-            </td>
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Piazza">Piazza</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Zoom">Zoom</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Quizzes">Quizzes</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/People">People</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Panopto">Panopto Video</a>
-                    </li>
-            </td>
-            <td valign="top">
-                <h2>Jae Butler</h2>
-                <label for="name"> Name:*</label>
-                <input type="text" value="Jae Butler" , placeholder="Jae Butler">
-                <label for="pronoun">Pronoun</label>
-                <select id="assignment-group">
-                    <option>None</option>
-                    <option>Group 1</option>
-                    <option>Group 2</option>
-                </select> <br>
-                <label for="title">Title</label>
-                <input type="text" value="Student" , placeholder="Student">
 
-                <table>
+  <body>
 
-                    <tr>
-                        <td>
-                            <h3>Contact</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>No Registered Services, you can add some on the <a href="#"> Settings</a> page</td> <br>
-                    </tr>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="margin-left: 85px;" >
+        <div class="container-fluid  " style="margin-right:0px;">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <a class="navbar-brand" style="margin-left: 0px;" href="#">Jae Butler's Profile</a>
+              
+          </div>
+        
+        </div>
+      </nav>
+      <hr>
+      
+      
 
-                    <tr>
-                        <td>
-                            <h3>Contact</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>No Registered Services, you can add some on the <a href="#"> Settings</a> page</td> <br>
-                    </tr>
-                    <br>
-                    <tr>
-                        <td>
-                            <h3>Biography</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Faculty,Software Engineer <br> <textarea name="bio" id="bio-edit" cols="30"
-                                rows="10">Faculty,Software Engineer  </textarea></td>
-                    </tr>
-
-                </table>
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="https://github.com/bosslee21/fse-dev">GitHub -> Links to an external site</a></li>
-                </ul>
-                <br>
-
-                <a href="/Kanbas/Account/Profile/screen.html">
-                    <button>Cancel</button>
+    <div class="container-fluid">
+        <div class="row">
+            <div class=" col-3 list-group wd-kanbas-navigation ">
+                <a
+                  href="/Kanbas/Account/Profile/screen.html"
+                  class="list-group-item list-group-item-action active" 
+                >
+                  <i class="fa fa-user-circle-o" aria-hidden="true" ></i>
+                  <br />
+                  Account
                 </a>
-                <a href="/Kanbas/Account/Profile/screen.html">
-                    <button>Save</button>
+                <a
+                  href="/Kanbas/Dashboard/screen.html"
+                  class="list-group-item list-group-item-action"
+                >
+                  <i class="fa fa-tachometer" aria-hidden="true"></i>
+                  <br />
+                  Dashboard
                 </a>
+                <a
+                  href="/Kanbas/Courses/Home/screen.html"
+                  class="list-group-item list-group-item-action"
+                >
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <br />
+                  Courses</a
+                >
+                <a
+                  href="/Kanbas/Calendar/screen.html"
+                  class="list-group-item list-group-item-action"
+                  ><i class="far fa-calendar-alt" aria-hidden="true"></i><br />
+                  Calendar</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-inbox" aria-hidden="true"></i> <br />
+                  Inbox</a
+                >
+                <a href="#" class="list-group-item list-group-item-action"
+                  ><i class="fa fa-history" aria-hidden="true"></i> <br />
+                  History</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-television" aria-hidden="true"> </i> <br />
+                  Studio</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-history" aria-hidden="true"></i> <br />
+                  History</a
+                >
+            
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-users" aria-hidden="true"></i> <br />
+            
+                  Groups</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-info-circle" aria-hidden="true"></i><br />
+                  Help</a
+                >
+            </div>
+            <div class="col-3">
+                <div class="list-group wd-account-navigation">
+                    <a href="#" class="list-group-item list-group-item-action"aria-current="true">
+                      Notification
+                    </a>
+                    <a href="/Kanbas/Account/Profile/screen.html" class="list-group-item list-group-item-action active">Profile</a>
+                    <a href="#" class="list-group-item list-group-item-action">Files</a>
+                    <a href="#" class="list-group-item list-group-item-action">Settings</a>
+                    <a href="#" class="list-group-item list-group-item-action">ePortfolios</a>
+                    <a href="#" class="list-group-item list-group-item-action">Shared Content</a>
+                    <a href="#" class="list-group-item list-group-item-action">The Hub</a>
+                    <a href="#" class="list-group-item list-group-item-action">Course Tool</a>
+                    <a href="#" class="list-group-item list-group-item-action">Global <br>Announcement</a>
+                  
+                   
+                  
+                
+                </div>
+            </div>
+
+            <div class="col-5">
+                <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+                <br />
+
+                <form>
+                    <div class="mb-2">
+                      <label for="exampleInputName" class="form-label">Name*</label>
+                      <input type="email" class="form-control" id="exampleInputName" aria-describedby="emailHelp" value="Jae Butler">
+                      
+                    </div>
+                </form>
+                
+                  <div class="dropdown">
+                    <label for="ropdownMenuButton2" class="form-label">Pronouns :</label> <br>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                      None
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                      <li><a class="dropdown-item active" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+                  <br>
+                  
+                  <label for="title" class="form-label">Title</label> <br>
+                  <input type="text" id="title" class="form-control" >
+                 
+                  <h3>Contact</h3>
+                  <p class="text-start fs-6">
+                    No Registered Services, you can add some on the
+                    <a href="#" class="text-danger"> Settings</a> page .
+                  </p>
+
+                  <h3>Biography</h3>
+                  <div class="form-floating">
+                    <label for="floatingTextarea2">Faculty,Software Engineer </label>
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    
+                  </div>
+                  <br>
+                  <h3>Links</h3>
+
+                  <div class="row">
+                    <div class="col-md-6" value="Youtube"><b>Title</b></div>
+                    <div class="col-md-6" value="https:youtube.com" ><b>URL</b></div>
+                  </div>
+                 
+                  <div class="input-group">
+
+                    <input type="text" id="titleid" class="form-control" placeholder="title"/>
+                    <span class="input-group-addon"><i class="fa fa-arrow-right align-content-center" aria-hidden="true"></i>
+                    </span>
+                   
+                    <input type="text" id="urlId" class="form-control" placeholder="URL"/>
+                    </div> <br>
+
+                    <a
+                    class="btn btn-secondary btn-md text-nowrap"
+                    role="button"> Add Another Link</a>
+
+                    <hr>
+
+                    <div class="float-end">
+                        <a
+                        href="/Kanbas/Account/Profile/screen.html"
+                        class="btn btn-danger btn-md text-nowrap"
+                        role="button"
+                        >  SAVE PROFILE </a>
+                    </div>
+                    <div class="float-end">
+                        <a
+                        href="/Kanbas/Account/Profile/screen.html"
+                        class="btn btn-secondary btn-md text-nowrap"
+                        role="button"
+                        >  Cancel </a>
+                    </div>
+
+                    
+
+                        
+                  
+                   
+
+                  
 
 
-            </td>
+                
+                </div>
 
+                <div class="col-1">
+                <a
+                    href="/Kanbas/Account/Profile/screen.html"
+                    class="btn btn-secondary btn-md text-nowrap"
+                    role="button"
+                    > <i class="fa fa-pencil" aria-hidden="true"> </i> Cancel Editing</a
+                >
+                </div>
+            
 
-
-        <tr>
-
+                  
+                  
+        
+        
+        </div>
+    </div>
 
     </tbody>
 
