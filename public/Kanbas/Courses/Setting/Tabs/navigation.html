@@ -1,159 +1,194 @@
-<table width="100%" border="1">
-    <tbody>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../../../Vendor/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="../../../../Vendor/fontawesome/css/all.css" />
+    <link
+      rel="stylesheet"
+      href="../../../../Vendor/fontawesome4/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="../index.css" />
+  </head>
 
-        <tr>
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="/Kanbas/">Northeastern</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Account/Profile/screen.html">Account</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
-                    </li>
-                    <li>
-                        <a href="#">Calendar</a>
-                    </li>
-                    <li>
-                        <a href="#">Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#">History</a>
-                    </li>
-                    <li>
-                        <a href="#">Studio</a>
-                    </li>
-                    <li>
-                        <a href="#">Commonds</a>
-                    </li>
-                    <li>
-                        <a href="#">Help</a>
-                    </li>
-                </ul>
-            </td>
 
-            <td valign="top">
-                <ul>
-                    <li>
-                        <a href="/Kanbas/Courses/Home/screen.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Piazza">Piazza</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Zoom">Zoom</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Quizzes">Quizzes</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/People">People</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Panopto">Panopto Video</a>
-                    </li>
-                    <li>
-                        <a href="/Kanbas/Courses/Setting/screen.html">Setting</a>
-                    </li>
-                </ul>
-            </td>
-
-            <td valign="top">
-                <!-- Tab links -->
-
-                <a href="/Kanbas/Courses/Setting/Tabs/courseDetail.html" class="tablinks">
-                    <button>Course Detail</button>
+  <body>
+    
+    <div class="container-fluid wd-container-overflow">
+        <div class="row">
+          <nav class="navbar navbar-light bg-white" style="margin-left: 30px; display: flex;">
+            <div class="container" style="display: flex;flex-direction: row;align-content: stretch;justify-content: flex-start;">
+              <a class="btn btn-primary" style="color:red; background-color: white; border: 0px; margin-left: 0px;" href="../../KanbasNavigation/index.html" role="button"><i class="fas fa-bars" ></i></a>
+             
+              <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" style="margin-left: 5px;"><a href="#" style="color: red; text-decoration: none;">CS5610 124785.02464112</a></li>
+                  <li class="breadcrumb-item active "  aria-current="page">Setting</li>
+                  
+                  
+                </ol>
+                
+              </nav>
+              
+            </div>
+           
+              
+          </nav>
+          <!-- <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-light shadow-3 p-4">
+              <button class="btn btn-link btn-block border-bottom m-0">Link 1</button>
+              <button class="btn btn-link btn-block border-bottom m-0">Link 2</button>
+              <button class="btn btn-link btn-block m-0">Link 3</button>
+            </div>
+          </div> -->
+          
+    
+          </nav>
+          <hr>
+            <div class=" col-2 list-group wd-kanbas-navigation  d-none d-md-block">
+                <a
+                  href="/Kanbas/Account/Profile/screen.html"
+                  class="list-group-item list-group-item-action " 
+                >
+                  <i class="fa fa-user-circle-o" aria-hidden="true" ></i>
+                  <br />
+                  Account
                 </a>
-                <a href="#" class="tablinks">
-                    <button>Section</button>
+                <a
+                  href="/Kanbas/Dashboard/screen.html"
+                  class="list-group-item list-group-item-action"
+                >
+                  <i class="fa fa-tachometer" aria-hidden="true"></i>
+                  <br />
+                  Dashboard
                 </a>
-                <a href="/Kanbas/Courses/Setting/Tabs/navigation.html" class="tablinks">
-                    <button>Navigation</button>
+                <a
+                  href="/Kanbas/Courses/Home/screen.html"
+                  class="list-group-item list-group-item-action active"
+                >
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  <br />
+                  Courses</a
+                >
+                <a
+                  href="/Kanbas/Calendar/screen.html"
+                  class="list-group-item list-group-item-action"
+                  ><i class="far fa-calendar-alt" aria-hidden="true"></i><br />
+                  Calendar</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-inbox" aria-hidden="true"></i> <br />
+                  Inbox</a
+                >
+                <a href="#" class="list-group-item list-group-item-action"
+                  ><i class="fa fa-history" aria-hidden="true"></i> <br />
+                  History</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-television" aria-hidden="true"> </i> <br />
+                  Studio</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-history" aria-hidden="true"></i> <br />
+                  History</a
+                >
+            
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-users" aria-hidden="true"></i> <br />
+            
+                  Groups</a
+                >
+                <a href="#" class="list-group-item list-group-item-action">
+                  <i class="fa fa-info-circle" aria-hidden="true"></i><br />
+                  Help</a
+                >
+            </div>
+            <div class="col-3 d d-none d-md-block">
+              <div class="list-group wd-course-navigation">
+                <a href="/Kanbas/Courses/Home/screen.html" class="list-group-item list-group-item-action" aria-current="true">
+                  Home
                 </a>
-                <a href="#" class="tablinks">
-                    <button>Apps</button>
-                </a>
-                <a href="#" class="tablinks">
-                    <button>Feature Options</button>
-                </a>
-                <a href="#" class="tablinks">
-                    <button>Integration</button>
-                </a>
+                <a href="/Kanbas/Courses/Modules/screen.html" class="list-group-item list-group-item-action">Modules</a>
+                <a href="/Kanbas/Courses/Assignments/screen.html" class="list-group-item list-group-item-action ">Assignments</a>
+                <a href="/Kanbas/Courses/Grades/screen.html" class="list-group-item list-group-item-action">Grades</a>
+                <a href="/Kanbas/Courses/People" class="list-group-item list-group-item-action">People</a>
+                <a href="/Kanbas/Courses/Piazza" class="list-group-item list-group-item-action">Piazza</a>
+                <a href="/Kanbas/Courses/Zoom" class="list-group-item list-group-item-action">Zoom</a>
+                <a href="/Kanbas/Courses/Quizzes" class="list-group-item list-group-item-action">Quizzes</a>
+                <a href="/Kanbas/Courses/Setting/screen.html" class="list-group-item list-group-item-action active">Setting</a>
+              
+                <a href="/Kanbas/Courses/Panopto" class="list-group-item list-group-item-action">Panopto Video</a>
+              </div>
+            </div>
+            
+            
+              
+            <div class="col-7">
+              <div class="container">
+                <div class="row " style="margin-bottom: 5px;">
+                 
+                    <ul class="nav nav-tabs wd-setting-tab">
+                        <li class="nav-item">
+                          <a class="nav-link "  aria-current="page" href="../screen.html">Course Details</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Sections</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="/public/Kanbas/Courses/Setting/Tabs/navigation.html">Navigation</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">App</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Integration</a>
+                          </li>
+                      </ul>
+                  </div>
 
-                <hr>
-                <h3>Navigation</h3>
-                <p>Drag items to reorder them in the course navigation</p>
-
-                <div class="top-section">
-                    <ul>
-                        <li>Home</li>
-                        <li>Modules</li>
-                        <li>Piazza</li>
-                        <li>Zoom Meeting</li>
-                        <li>Assignements</li>
-                        <li>Quizzes</li>
-                        <li>Grades</li>
-                        <li>People</li>
-                        <li>Panopto Video</li>
-                    </ul>
-
-                </div>
-                <hr>
-                <p>
-                    <font size="4">Drag Items here to hide them from students</font>
-                    <br> Disabling most pages will cause students who visit those pages to be redirected to the course
-                    home page.
-                </p>
-                <div class="botton-section">
-                    <ul>
-                        <li>Chat</li>
-                        Page disabled, wont appear in navigation
-                        
-                        <li>SCORM</li>
-                            Page disabled, wont appear in navigation
-
-                        <li>Attendance</li>
-                        Page disabled, wont appear in navigation
-                        <li>Barnes and Noble Bookstore</li>
-                        Page disabled, wont appear in navigation
-                        <li>Digication</li>
-                        Page disabled, wont appear in navigation
-                        <li>Top Hat</li>
-                        Page disabled, wont appear in navigation
-                        <li>Syllabus</li>
-                        Page disabled, wont appear in navigation
-                    
-                    </ul>
-                </div>
-                <a href="/Kanbas/Courses/Setting/screen.html">
-                    <button>SAVE</button>
-                </a>
+                  
+             
 
 
 
-            </td>
+                  <div class="flex-md-row">
+                    <p>Drag and Drop Items to Reorder them in the course Navigation</p>
+
+                    <div class="list-group m-md-auto">
+                      
+                        <a href="#" class="list-group-item list-group-item-action">Home</a>
+                        <a href="#" class="list-group-item list-group-item-action">Modules</a>
+                        <a href="#" class="list-group-item list-group-item-action">Piazza</a>
+                        <a href="#" class="list-group-item list-group-item-action">Zoom Meeting</a>
+                        <a href="#" class="list-group-item list-group-item-action">Assignments</a>
+                        <a href="#" class="list-group-item list-group-item-action">Grade</a>
+                        <a href="#" class="list-group-item list-group-item-action " tabindex="-1" aria-disabled="true">Panoptop</a>
+                      </div>
+                      <div style="margin-top: 15px;">
+                        <p>Drag Items here to hide them from Students. <br>
+                        Disableing Page will create page to be redirected</p>
+                      </div>
+
+                      <div class="list-group m-md-auto">
+                       
+                        <a href="#" class="list-group-item list-group-item-action">Chat <br><p>Page Disabled Will not appear in Navigation</p></a>
+                        <a href="#" class="list-group-item list-group-item-action">SCORM <br><p>Page Disabled Will not appear in Navigation</p></a>
+                        <a href="#" class="list-group-item list-group-item-action">ATTENDANCE <br><p>Page Disabled Will not appear in Navigation</p></a>
+                        <a href="#" class="list-group-item list-group-item-action">BARNES AND NOBLE Bookstore <br><p>Page Disabled Will not appear in Navigation</p></a>
+                        <a href="#" class="list-group-item list-group-item-action">TOP HAT <br><p>Page Disabled Will not appear in Navigation</p></a>
+                      
+                      </div>
+                      <div class="float-start">
+                        <button class="bg-danger" style="border-color: red; margin-top: 15px;"> <a href="../screen.html" style="color: white; text-decoration: none;">Save</a></button>
+                       
+                      </div>
 
 
-        </tr>
+        </div>
+    </div>
+    
+  </body>
+</html>
 
+</body>
 
-
-    </tbody>
-
-
-
-</table>
+</html>

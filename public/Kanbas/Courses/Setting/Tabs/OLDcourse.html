@@ -1,0 +1,245 @@
+<table width="100%" border="1">
+    <head>
+      <link rel="stylesheet" href="/public/Vendor/css/bootstrap.min.css">
+      <link rel="stylesheet" href="index.css">
+    </head>
+      <tbody>
+  
+        <tr>
+            <td valign="top">
+                <ul>
+                    <li>
+                        <a href="/Kanbas/">Northeastern</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Account/Profile/screen.html">Account</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Dashboard/screen.html">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Home/screen.html">Courses</a>
+                    </li>
+                    <li>
+                        <a href="#">Calendar</a>
+                    </li>
+                    <li>
+                        <a href="#">Inbox</a>
+                    </li>
+                    <li>
+                        <a href="#">History</a>
+                    </li>
+                    <li>
+                        <a href="#">Studio</a>
+                    </li>
+                    <li>
+                        <a href="#">Commonds</a>
+                    </li>
+                    <li>
+                        <a href="#">Help</a>
+                    </li>
+                </ul>
+            </td>
+  
+            <td valign="top">
+                <ul>
+                    <li>
+                        <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Modules/screen.html">Modules</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Piazza">Piazza</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Zoom">Zoom</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Quizzes">Quizzes</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Assignments/screen.html">Assignments</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Grades/screen.html">Grades</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/People">People</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Panopto">Panopto Video</a>
+                    </li>
+                    <li>
+                        <a href="/Kanbas/Courses/Setting/screen.html">Setting</a>
+                    </li>
+                </ul>
+            </td>
+  
+            <td valign="top">
+                <!-- Tab links -->
+  
+                <a href="/Kanbas/Courses/Setting/Tabs/courseDetail.html" class="tablinks">
+                  <button>Course Detail</button>
+              </a>
+              <a href="#" class="tablinks">
+                  <button>Section</button>
+              </a>
+              <a href="/Kanbas/Courses/Setting/Tabs/navigation.html" class="tablinks">
+                  <button>Navigation</button>
+              </a>
+              <a href="#" class="tablinks">
+                  <button>Apps</button>
+              </a>
+              <a href="#" class="tablinks">
+                  <button>Feature Options</button>
+              </a>
+              <a href="#" class="tablinks">
+                  <button>Integration</button>
+              </a>
+              
+                <hr>
+  
+                <table width="100">
+                    <tbody>
+                        <tr>
+                            <h2>Course Details</h2>
+                        </tr>
+                        <tr>
+                            <td><strong>Images:</strong>
+                            </td>
+                            <td>
+                                <input type="file" name="fileToUpload" id="fileToUpload" value="Choose Image">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <strong>Name:</strong> CS5610 Web Development <br>
+                <strong>Course Code:</strong> CS5610 <br>
+                <strong>BluePrint Course</strong> NO <br>
+                <strong>Course Template</strong> <input type="text" placeholder="Enable course As a Course Template">
+                <br>
+                <strong>TimeZone</strong>
+                <select name="timezone_offset" id="timezone-offset">
+                    <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                    <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+                    <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+                    <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                </select> <br>
+                <strong>SIS ID:</strong> CS5610.12345.6789 <br>
+                <strong>SubAccount: </strong> <a href="#">Graduate</a>
+                <br>
+                <strong>Term:</strong> 202409-23232FALL123 <br>
+                <strong>Participation:</strong>
+  
+                <select name="partis" id="parti">
+                    <option value="term">Term</option>
+                    <option value="semester">Semester</option>
+                    <option value="quarter">Quarter</option>
+                </select>
+                <br>
+                <br>
+                Course Participationos is limited to <b>Term</b> start and end dates. <br>
+                <br>
+                <label for="dates" id="start"><b>Start</b></label> <br>
+                <input type="date" name="time" id="start"><br><br>
+                <label for="dates" id="end"><b>End</b></label> <br>
+                <input type="date" name="time" id="end">
+  
+                <br><br>
+                <div class="default-times">
+                    <strong>Default due time: </strong>
+                    <select name="default-time" id="def-time">
+                        <option value="default"> Account-default 11:59 pm</option>
+                        <option value="class">class-default 12:00 AM</option>
+                        <option value="quarter">Quarter</option>
+                    </select>
+                </div>
+                <br>
+                <div class="language">
+                    <strong>Language: </strong>
+                    <select name="default-times" id="def-time">
+                        <option value="default"> Not Set </option>
+                        <option value="class">set US</option>
+                        <option value="quarter">Quarter</option>
+                    </select>
+                </div>
+  
+                <div class="file">
+                    <strong>File Storage: </strong>
+                    <select name="storage" id="file-storage">
+                        <option value="default"> 1.0 GB </option>
+                        <option value="class">100 mb</option>
+                        <option value="quarter">1.2 billion GB</option>
+                    </select>
+                    <br>
+                    <br>
+                    <div class="large">
+                        <label>Large Course:</label>
+                        <input type="checkbox" id="group-assignment" name="check-group">
+                        <label for="group-assignment">Launch SpeedGrader Filtered by Student Group</label> <br>
+  
+                    </div>
+  
+                    <div class="large">
+                        <label>Grading Schema:</label>
+                        <input type="checkbox" id="schema" name="check-group">
+                        <label for="schema">Enable Course Grading Schema</label> <br>
+  
+                    </div>
+                    <br>
+                    <div>
+                        <strong>Format: </strong>
+                        <select name="format" id="format-list">
+                            <option value="default"> On-Campus </option>
+                            <option value="class">Online</option>
+                            <option value="quarter">Hybrid</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="path">
+                        <strong>Mastery Path: </strong>
+                        <input type="checkbox" id="path" name="check-group">
+                        <label for="path">Enable individual learning paths for student based on Assesements</label> <br>
+  
+                    </div>
+  
+                    <div class="Description">
+                        <table>
+                            <tr>
+                                <td><strong>Description: </strong></td>
+                                <td><textarea name="description" id="description" cols="30" rows="10"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><a href="#">more option</a></td>
+                            </tr>
+                        </table>
+                        <br>
+  
+                    </div>
+  
+                    <div class="submit-button">
+                        <table>
+                            <tr>
+  
+                                <td>
+                                    <button>Update Course Detail <a
+                                            href="/Kanbas/Courses/Setting/screen.html"></a></button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+            </td>
+  
+  
+        </tr>
+  
+  
+  
+    </tbody>
+  
+  
+  
+  </table>
