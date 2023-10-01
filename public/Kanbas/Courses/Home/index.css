@@ -26,6 +26,15 @@
     padding-top: 5px;
    
 }
+.wd-kanbas-navigation {
+    background-color: black;
+    padding: 0px;
+    list-style: none;
+    width: 100px;
+    height: 100vh;
+    margin: 0px;
+    
+}
 
 .wd-kanbas-navigation .list-group-item.active  {
     
@@ -107,15 +116,7 @@
 
 
 
-/* .wd-kanbas-navigation {
-    background-color: black;
-    padding: 0px;
-    list-style: none;
-    width: 100px;
-    margin: 0px;
 
-    
-} */
 /* .wd-kanbas-navigation li {
      border-bottom: 1px solid white; 
     font-size: 0.8em;

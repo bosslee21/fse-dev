@@ -113,15 +113,15 @@
 
 
 
-/* .wd-kanbas-navigation {
+.wd-kanbas-navigation {
     background-color: black;
     padding: 0px;
     list-style: none;
     width: 100px;
+    height: 100vh;
     margin: 0px;
-
     
-} */
+}
 /* .wd-kanbas-navigation li {
      border-bottom: 1px solid white; 
     font-size: 0.8em;

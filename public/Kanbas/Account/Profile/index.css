@@ -9,6 +9,15 @@
     margin-right: 10px;
     margin-bottom: 5px;
 }
+.wd-kanbas-navigation {
+    background-color: black;
+    padding: 0px;
+    list-style: none;
+    width: 100px;
+    height: 100vh;
+    margin: 0px;
+    
+}
 /* list group item inside course navigation class then apply */
 .wd-kanbas-navigation .list-group-item {
   
