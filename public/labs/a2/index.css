@@ -3,6 +3,17 @@
     color: white;
 } */
 /* id selector */
+
+/* 3.2.5.2 */
+.mb-2 {
+    width: 150px;
+}
+.wd-active {
+    background-color: grey;
+    opacity: 75%;
+    
+}
+
 p#id-selector-1 {
     background-color: red;
     color: white;
