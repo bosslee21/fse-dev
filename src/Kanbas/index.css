@@ -1,0 +1,24 @@
+
+
+.container {
+    height: 200px; /* Set the height of the container div */
+    display: flex; /* Use flexbox to create a vertical layout */
+    flex-direction: column; /* Stack the child divs vertically */
+}
+
+.top {
+    flex: 1; /* Take up 50% of the container height */
+    background-color: #f0f0f0; /* Just for visualization */
+}
+
+.bottom {
+    flex: 1; /* Take up 50% of the container height */
+    background-color: #e0e0e0; /* Just for visualization */
+}
+.navbar {
+    height: 5%; /* Set the height of the breadcrumbs div to 20% of the parent div */
+}
+
+.main-content-class {
+    height: 95%; /* Set the height of the main-content-class div to 80% of the parent div */
+}

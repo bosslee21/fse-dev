@@ -6,6 +6,7 @@ function JsonString() {
         <div>
             <h2>JSON Stringify</h2>
             squares = {JSON.stringify(squares)} <br />
+            <h2>Json PRE STRINGIFY</h2>
             <JsonPre json={squares} />
             {/* <JsonPre json={JSON.stringify(squares)} /> */}
         </div>

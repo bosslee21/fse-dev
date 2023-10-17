@@ -1,0 +1,21 @@
+.main-content-class {
+    height: 95%; /* Set the height of the main-content-class div to 80% of the parent div */
+}
+
+.top-content-class {
+    height: 5%; /* Set the height of the breadcrumbs div to 20% of the parent div */
+}
+
+/* .wd-dashboard {
+    width: 270px;
+    height: 200px;
+} */
+.wd-dashboard-grid .col {
+    width: 270px;
+    margin: 15px;
+}
+
+.wd-card-img-top {
+    width: auto;
+    height: 180px;
+}
