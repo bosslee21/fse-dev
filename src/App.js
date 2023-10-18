@@ -20,7 +20,9 @@ function App() {
           {/* if you see 'path' in the url then navigate to that path.
            {element} is the component to render */}
 
-          <Route path="/" element={<Navigate to="Kanbas" />} />
+          {/* <Route path="/" element={<Navigate to="Kanbas" />} /> */}
+          <Route path="/" element={<Navigate to="Labs" />} />
+
           <Route path="/Hello" element={<HelloWorld />} />
           <Route path="/Labs/*" element={<Labs />} />
           <Route path="/Kanbas/*" element={<Kanbas />} />
