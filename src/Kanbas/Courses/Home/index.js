@@ -45,9 +45,9 @@ function Home() {
         </div>
         <div className="col-2 col-lg-3 d-none d-md-block">
           <b>Course Status </b>
-          <div class="d-flex flex-row" >
-            <button type="button" class="btn btn-secondary opacity-50 btn-sm"><TiCancel className="wd-icon" /> Unpublished</button>
-            <button type="button" class="btn btn-success opacity-75 btn-sm">Publish</button>
+          <div className="d-flex flex-row" >
+            <button type="button" className="btn btn-secondary opacity-50 btn-sm"><TiCancel className="wd-icon" /> Unpublished</button>
+            <button type="button" className="btn btn-success opacity-75 btn-sm">Publish</button>
 
           </div>
           <div className="d-flex flex-column" style={{ marginBottom: '3px' }}>

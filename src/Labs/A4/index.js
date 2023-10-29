@@ -11,7 +11,7 @@ import ObjectStateVariable from "./ObjectStateVariable";
 import ArrayStateVariable from "./ArrayStateVariable";
 import FunctionAsParameters from "./FunctionAsParameters";
 import ParentStateComponent from "./ParentStateComponent";
-
+import ReduxExamples from "./ReduxExamples";
 function A4() {
     const sayHello = () => {
         alert("Hello WORLLD");
@@ -19,6 +19,9 @@ function A4() {
     return (
         <div>
             <h1>Lab 4</h1>
+            <ReduxExamples />
+            <ArrayStateVariable />
+
             <Add a={1} b={2} />
             <ClickEvent />
             <PassingDataOnEvent />
