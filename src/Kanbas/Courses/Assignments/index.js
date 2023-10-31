@@ -24,7 +24,6 @@ function Assignments() {
   const dispatch = useDispatch();
 
   const courseAssignments = assignments.filter((as) => as.course === courseId);
-  console.log(courseAssignments) // get the corresponding assignments for the course
 
 
   return (
@@ -67,18 +66,37 @@ function Assignments() {
                   <p>Week {index + 1} - Starting on {assignment.startDate}  <br></br> Due on {assignment.dueDate} </p>
 
                 </Link>
-                <button className="btn btn-danger float-middle" style={{ marginLeft: 6 }}
-                  onClick={() => dispatch(deleteAssignment({ assignment }))}>
-                  Delete
-                </button>
+                <div className="d-flex flex-row">
+                  <div>
+                    <button className="btn btn-danger float-middle" style={{ marginLeft: 6 }}
+                      onClick={() => dispatch(deleteAssignment({ assignment }))}>
+                      Delete
+                    </button>
+
+                  </div>
+                  <div>
+                    <Link
+                      key={assignment._id}
+                      to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                    ><button className="btn btn-warning float-middle" style={{ marginLeft: 6 }}
+                      onClick={() => dispatch(deleteAssignment({ assignment }))}>
+                        Edit
+                      </button>
+
+
+                    </Link>
+
+
+                  </div>
+
+
+                </div>
+
+
 
               </>
 
-
             ))}
-
-
-
           </div>
         </div>
 

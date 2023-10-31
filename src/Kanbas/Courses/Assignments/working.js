@@ -56,18 +56,46 @@ function Assignments() {
                             <AiOutlinePlusSquare /> </li>
 
                         {courseAssignments.map((assignment, index) => (
-                            <Link
-                                key={assignment._id}
-                                to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                                className="list-group-item">
-                                <h6><BsPencilSquare style={{ color: 'green' }} /> <b>  A{index + 1} {assignment.title} </b>
-                                    <button className="btn btn-danger float-middle" style={{ marginLeft: 6 }}
-                                        onClick={() => dispatch(deleteAssignment({ assignment }))}>
-                                        Delete
-                                    </button></h6>
-                                <p>Week {index + 1} - Starting on {assignment.startDate}  <br></br> Due on {assignment.dueDate} </p>
+                            <>
+                                <Link
+                                    key={assignment._id}
+                                    to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                                    className="list-group-item">
+                                    <h6><BsPencilSquare style={{ color: 'green' }} /> <b>  A{index + 1} {assignment.title} </b>
+                                    </h6>
+                                    <p>Week {index + 1} - Starting on {assignment.startDate}  <br></br> Due on {assignment.dueDate} </p>
 
-                            </Link>
+                                </Link>
+                                <div className="d-flex flex-row">
+                                    <div>
+                                        <button className="btn btn-danger float-middle" style={{ marginLeft: 6 }}
+                                            onClick={() => dispatch(deleteAssignment({ assignment }))}>
+                                            Delete
+                                        </button>
+
+                                    </div>
+                                    <div>
+                                        <Link
+                                            key={assignment._id}
+                                            to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                                        ><button className="btn btn-warning float-middle" style={{ marginLeft: 6 }}
+                                            onClick={() => dispatch(deleteAssignment({ assignment }))}>
+                                                Edit
+                                            </button>
+
+
+                                        </Link>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+
+                            </>
+
                         ))}
                     </div>
                 </div>
