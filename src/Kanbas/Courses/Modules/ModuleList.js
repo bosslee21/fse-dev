@@ -1,72 +1,29 @@
-import React, { useState } from "react";
+
 import { useParams } from "react-router-dom";
-import db from "../../Database";
+
 import { AiFillCheckCircle } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./index.css";
 
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addLesson,
+  deleteLesson,
+  updateModule,
+  setLesson,
+} from "./modulesReducer";
 //show
 function ModuleList() {
+
   const { courseId } = useParams();
 
-  const [modules, setModules] = useState(db.modules);
 
+  const modules = useSelector((state) => state.modulesReducer.modules);
+  const lesson = useSelector((state) => state.modulesReducer.lesson);
+  const dispatch = useDispatch();
 
-  const [lesson, setLesson] = useState({
-    // name: "New Module",
-    // description: "New Description",
-    // course: courseId,
-    name: "New Lesson",
-    description: "New Description",
-
-  });
-
-  const addLesson = (lesson) => {
-
-    let findModule = modules.find((m) => m.course === courseId); // find the module
-    // console.log(findModule);
-    const newLessons = [...findModule.lessons, lesson]; // new array of lesson from input append it to newLesson array
-    // console.log(newLessons)
-    findModule = { ...findModule, lessons: newLessons } // override the lesson in the result.(module)
-    // console.log(findModule)
-    const filterModule = modules.filter((mod) => mod._id !== courseId); // remove module that we want override. from all the modules. 
-    // === only   allow that 1 particular to be ramained. 
-    console.log(filterModule)
-    setModules([
-
-      ...filterModule, findModule  // append the result(which is new modules with new lesson) to all the modules.
-
-    ]);
-
-  };
-
-  const deleteLesson = (lessonId) => {
-    console.log("Calling Delete Lesson");
-    // let findModule = modules.find((module) => module.course === courseId); // finding the module that we want to remove lesson
-    // console.log(findModule)
-    const removedLessonArr = findModule.lessons.filter((lesson) => lesson._id !== lessonId); // filter out the lesson from that module with lessonId
-    console.log(removedLessonArr)
-    findModule = { ...findModule, lessons: removedLessonArr } // override the lesson in the findModule
-    const findModule = modules.find((module) => module._id !== lessonId);
-    console.log(findModule)
-
-    setModules([...modules, findModule]); // override the module in the modules
-
-  };
-
-  const updateModule = () => {
-    setModules(
-      modules.map((m) => {
-        if (m.course === courseId) {
-          let findModule = modules.find((module) => module.course === courseId); // finding the module that we want to remove lesson
-
-          return findModule;
-        } else {
-          return m;
-        }
-      })
-    );
-  }
+  // console.log(modules)
+  // console.log(lesson.name)
 
 
 
@@ -74,21 +31,28 @@ function ModuleList() {
     <ul className="list-group wd-home-list-group">
 
       <li className="list-group-item">
-        <button className="btn btn-success" onClick={() => addLesson(lesson)} style={{ marginBottom: 4, marginRight: 5 }}>Add</button>
-        <button className="btn btn-warning" onClick={updateModule} style={{ marginBottom: 4 }} > Update</button>
+        <button className="btn btn-success" onClick={() => dispatch(addLesson({ courseId, lesson }))} style={{ marginBottom: 4, marginRight: 5 }}>Add</button>
+
+        <button className="btn btn-warning" onClick={() => dispatch(updateModule({ courseId, lesson }))} style={{ marginBottom: 4 }} > Update</button>
 
 
-        <input value={module.name} className="form-control" style={{ marginBottom: 4 }}
-          onChange={(e) => setLesson({
+
+        <input value={lesson.name} className="form-control" style={{ marginBottom: 4 }}
+          onChange={(e) => dispatch(setLesson({
+
             ...lesson, name: e.target.value
-          })}
+          }))}
         />
-        <textarea value={module.description} className="form-control" rows={3}
-          onChange={(e) => setLesson({
+        <textarea value={lesson.description} className="form-control" rows={3}
+          onChange={(e) => dispatch(setLesson({
+
+
             ...lesson, description: e.target.value
-          })}
+          }))}
         />
       </li>
+
+
 
 
       {
@@ -108,12 +72,12 @@ function ModuleList() {
                         <div>
                           <li className="list-group-item list-group-item-secondary" style={{ borderRadius: 0 }}><h6>Week {index}
                             <button className="btn btn-success" style={{ marginLeft: 35 }}
-                              onClick={(event) => { setLesson(lesson); }}>
+                              onClick={() => dispatch(setLesson({ ...lesson }))}>
                               Edit
                             </button>
 
                             <button className="btn btn-danger float-middle" style={{ marginLeft: 4 }}
-                              onClick={() => deleteLesson(module)}>
+                              onClick={() => dispatch(deleteLesson({ courseId, lesson }))}>
                               Delete
                             </button>
 
@@ -139,11 +103,11 @@ function ModuleList() {
                   </ul>
                 )
               }
-              {/* {
+              {
                 // if there is lessons in the module, then render the lessons
                 module.readings && (
                   <ul className="list-group">
-                    <li class="list-group-item list-group-item-secondary" style={{ borderRadius: 0 }}><b>Reading </b></li>
+                    <li className="list-group-item list-group-item-secondary" style={{ borderRadius: 0 }}><b>Reading </b></li>
 
                     {
                       module.readings.map((reading, index) => (
@@ -155,7 +119,7 @@ function ModuleList() {
                     }
                   </ul>
                 )
-              } */}
+              }
 
             </li>
           ))

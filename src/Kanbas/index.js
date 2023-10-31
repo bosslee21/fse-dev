@@ -5,30 +5,33 @@ import Account from "./Account";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import Calendar from "./Calendar";
+import store from "./store/index";
+import { Provider } from "react-redux";
 
 // import "./index.css";
 function Kanbas() {
     return (
-        
-         <div className="row">
-            <div className="col-2 col-xl-1" style={{paddingLeft: 10 , paddingRight:0, display:"flex"}}>
-                <KanbasNavigation />
+        <Provider store={store}>
+            <div className="row">
+                <div className="col-2 col-xl-1" style={{ paddingLeft: 10, paddingRight: 0, display: "flex" }}>
+                    <KanbasNavigation />
+                </div>
+
+                <Routes>
+                    <Route path="/" element={<Navigate to="Dashboard" />} />
+                    <Route path="Account" element={<Account />} />
+                    <Route path="Dashboard" element={<Dashboard />} />
+                    <Route path="Courses/:courseId/*" element={<Courses />} />
+                    <Route path="Calendar" element={<Calendar />} />
+
+                </Routes>
+
             </div>
-
-            <Routes>
-                <Route path="/" element={<Navigate to= "Dashboard"/>} />
-                <Route path="Account" element={<Account/>} />
-                <Route path="Dashboard" element={<Dashboard/>} />
-                <Route path="Courses/:courseId/*" element={<Courses/>} />
-                <Route path="Calendar" element={<Calendar/>} />
-
-            </Routes>
-
-        </div>
+        </Provider>
 
 
 
-     
+
     )
 }
 export default Kanbas

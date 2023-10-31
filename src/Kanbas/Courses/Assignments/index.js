@@ -6,12 +6,27 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlinePlusSquare } from "react-icons/ai";
 import { BsPencilSquare } from "react-icons/bs";
 import "./index.css";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  deleteAssignment,
+} from "./assignmentsReducer";
 
 function Assignments() {
   const { courseId } = useParams();
-  const assignments = db.assignments;
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId);
+  // const assignments = db.assignments;
+  // const courseAssignments = assignments.filter(
+  //   (assignment) => assignment.course === courseId);
+
+
+
+  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  const dispatch = useDispatch();
+
+  const courseAssignments = assignments.filter((as) => as.course === courseId);
+  console.log(courseAssignments) // get the corresponding assignments for the course
+
+
   return (
 
     <div className="col-9 col-lg-10 d-none d-sm-block" style={{ paddingLeft: 0, overflow: "hidden" }}>
@@ -42,15 +57,28 @@ function Assignments() {
               <AiOutlinePlusSquare /> </li>
 
             {courseAssignments.map((assignment, index) => (
-              <Link
-                key={assignment._id}
-                to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                className="list-group-item">
-                <h6><BsPencilSquare style={{ color: 'green' }} /> <b>  A{index + 1} {assignment.title} </b> </h6>
-                <p>Week {index + 1} - Starting on {assignment.startDate}  <br></br> Due on {assignment.dueDate} </p>
+              <>
+                <Link
+                  key={assignment._id}
+                  to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
+                  className="list-group-item">
+                  <h6><BsPencilSquare style={{ color: 'green' }} /> <b>  A{index + 1} {assignment.title} </b>
+                  </h6>
+                  <p>Week {index + 1} - Starting on {assignment.startDate}  <br></br> Due on {assignment.dueDate} </p>
 
-              </Link>
+                </Link>
+                <button className="btn btn-danger float-middle" style={{ marginLeft: 6 }}
+                  onClick={() => dispatch(deleteAssignment({ assignment }))}>
+                  Delete
+                </button>
+
+              </>
+
+
             ))}
+
+
+
           </div>
         </div>
 

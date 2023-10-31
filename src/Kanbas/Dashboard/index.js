@@ -24,7 +24,7 @@ function getImageUrl(courseId) {
         case 'RS104': return imgRS104;
         case 'RS105': return imgRS105;
         case 'RS106': return imgRS106;
-        default: return ''; // default case to handle unexpected courseId
+        default: return imgRS101; // default case to handle unexpected courseId
     }
 }
 
@@ -45,6 +45,8 @@ function Dashboard() {
             _id: new Date().getTime()
         }]);
     };
+
+
     const deleteCourse = (courseId) => {
         setCourses(courses.filter((course) => course._id !== courseId));
     };
@@ -60,11 +62,6 @@ function Dashboard() {
             })
         );
     };
-
-
-
-
-
 
 
     return (
