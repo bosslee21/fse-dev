@@ -5,14 +5,21 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { BsCalendar3 } from "react-icons/bs";
 
+import {
+  setAssignment
+} from "../assignmentsReducer";
+import { useDispatch, useSelector } from "react-redux";
 
 
 function AssignmentEditor() {
   const { assignmentId } = useParams();
+
   const assignment = db.assignments.find(
     (assignment) => assignment._id === assignmentId);
 
+  const assignmentSelector = useSelector((state) => state.assignmentsReducer.assignment);
 
+  const dispatch = useDispatch();
   const { courseId } = useParams();
   const navigate = useNavigate();
 
@@ -35,8 +42,13 @@ function AssignmentEditor() {
       <hr />
 
       <h6>Assignment Name</h6>
-      <input value={assignment.title}
-        className="form-control mb-2" />
+
+
+
+      <input value={assignment.title} className="form-control"
+        onChange={(e) => dispatch(setAssignment({ ...assignmentSelector, title: e.target.value }))} />
+
+
       <div className="mb-3">
 
         <label htmlFor="exampleFormControlTextarea1" className="form-label">Description</label>

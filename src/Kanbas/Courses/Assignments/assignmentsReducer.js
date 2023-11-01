@@ -39,13 +39,19 @@ const assignmentsSlice = createSlice({
         //         }
         //     });
         // },
-        // setModule: (state, action) => {
-        //     state.module = action.payload;
-        // },
+
+
+
+        setAssignment: (state, action) => {
+            console.log("SetAssignment")
+            console.log(action.payload)
+            const newAssignment = action.payload;
+            state.assignment = newAssignment
+        },
     },
 });
 
 
-export const { deleteAssignment,
+export const { deleteAssignment, setAssignment
 } = assignmentsSlice.actions;
 export default assignmentsSlice.reducer;

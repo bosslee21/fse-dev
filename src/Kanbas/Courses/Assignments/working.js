@@ -38,7 +38,7 @@ function Assignments() {
                         <button className="btn btn-secondary opacity-10" style={{ marginBottom: '2px', marginRight: 1 }}>
                             <AiOutlinePlus style={{ color: 'white' }} /> Group
                         </button>
-                        <button className="btn btn-danger opacity-20" style={{ marginBottom: '2px', marginRight: 1 }}>
+                        <button className="btn btn-danger opacity-20" style={{ marginBottom: '2px', marginRight: 1 }} onClick={{}}>
                             <AiOutlinePlus className="wd-incon" /> Assignment
                         </button>
 

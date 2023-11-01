@@ -8,7 +8,7 @@ import { BsPencilSquare } from "react-icons/bs";
 import "./index.css";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  deleteAssignment,
+  deleteAssignment, setAssignment
 } from "./assignmentsReducer";
 
 function Assignments() {
@@ -23,7 +23,12 @@ function Assignments() {
   const assignment = useSelector((state) => state.assignmentsReducer.assignment);
   const dispatch = useDispatch();
 
+  console.log(assignments)
+  console.log(assignment)
+
   const courseAssignments = assignments.filter((as) => as.course === courseId);
+  console.log(typeof courseAssignments)
+  console.log(courseAssignments)
 
 
   return (
@@ -38,7 +43,7 @@ function Assignments() {
             <button className="btn btn-secondary opacity-10" style={{ marginBottom: '2px', marginRight: 1 }}>
               <AiOutlinePlus style={{ color: 'white' }} /> Group
             </button>
-            <button className="btn btn-danger opacity-20" style={{ marginBottom: '2px', marginRight: 1 }}>
+            <button className="btn btn-danger opacity-20" style={{ marginBottom: '2px', marginRight: 1 }} onClick={{}}>
               <AiOutlinePlus className="wd-incon" /> Assignment
             </button>
 
@@ -79,7 +84,7 @@ function Assignments() {
                       key={assignment._id}
                       to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                     ><button className="btn btn-warning float-middle" style={{ marginLeft: 6 }}
-                      onClick={() => dispatch(deleteAssignment({ assignment }))}>
+                      onClick={() => dispatch(setAssignment({ ...assignment }))}>
                         Edit
                       </button>
 
