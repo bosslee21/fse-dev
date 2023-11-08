@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 function WorkingWithArrays() {
+    const [errorMessage, setErrorMessage] = useState(null);
+
 
     const API = "http://localhost:4000/a5/todos";
 
     const [id, setId] = useState(1);
     const [title, setTitle] = useState("empty")
+    const [description, setDescription] = useState("new Description")
+    const [completed, setCompleted] = useState(false)
     const [todo, setTodo] = useState({
         id: 1,
         title: "NodeJS Assignment",
@@ -58,23 +62,97 @@ function WorkingWithArrays() {
         setTodo2(response.data);
 
     }
+    // this is old method of delete
     const removeTodo = async (id) => {
         const response = await axios.get(`${API}/${id}/delete`);
         setTodo2(response.data);
     }
     const deleteTodo = async (id) => {
-        const response = await axios.delete(`${API}/${id}`);
-        setTodo2(response.data);
+        try {
+            const response = await axios.delete(`${API}/${id}`);
+            setTodo2(response.data);
+        } catch (error) {
+            console.log(error)
+            setErrorMessage(error.response.data.message);
+        }
     }
-
+    // old method of update. 
     const updateTodo = async (id, title) => {
         const response = await axios.get(`${API}/${id}/title/${title}`);
         setTodo2(response.data);
     }
+    const updateTodo2 = async () => {
+        try {
+            const response = await axios.put(
+                `${API}/${todo.id}`, todo2);
+            setTodo2(todo.map((t) => (
+                t.id === todo.id ? todo : t)));
+            setTodo2({});
+        } catch (error) {
+            console.log(error)
+            setErrorMessage(error.response.data.message);
+        }
+
+    };
+
 
     return (
         <div>
-            <h1>Todos from Server</h1>
+            <h1>Todos from Server + Following Lab</h1>
+            {errorMessage && (
+                <div className="alert alert-danger mb-2 mt-2">
+                    {errorMessage}
+                </div>
+            )}
+
+            <textarea
+                onChange={(e) => setTodo({
+                    ...todo,
+                    description: e.target.value
+                })}
+                value={todo.description} type="text"
+            />
+            <input
+                onChange={(e) => setTodo({
+                    ...todo, due: e.target.value
+                })}
+                value={todo.due} type="date"
+            />
+            <label>
+                <input
+                    onChange={(e) => setTodo({
+                        ...todo, completed: e.target.checked
+                    })}
+                    value={todo.completed} type="checkbox"
+                />
+                Completed
+            </label>
+            <input
+                checked={todo.completed}
+                type="checkbox" readOnly
+            />
+            {todo.title}
+            <p>{todo.description}</p>
+            <p>{todo.due}</p>
+            <br></br>
+
+            <button
+                onClick={() => deleteTodo(todo.id)}
+                className="btn btn-danger float-end ms-2">
+                Delete
+            </button>
+
+            <button onClick={updateTodo2}>
+                Update Todo
+            </button>
+
+
+
+            {/* Lecture with professor */}
+            <h2>AXIOS LAB With Professor </h2>
+            <button onClick={postTodo} >
+                Post Todo
+            </button>
             <button className="btn btn-primary" onClick={createTodo}>Create Todo</button>
             <button className="btn btn-primary" onClick={postTodo}>PostT Todo</button>
 
@@ -117,7 +195,7 @@ function WorkingWithArrays() {
 
             <a href={`${API}/${id}`}
                 className="btn btn-primary me-2">
-                Get Todo by ID
+                Get Todo by ID /This is where set to CRUD for LAB
             </a>
 
             <h3>Filtering Array Items When Completed is true</h3>
@@ -135,7 +213,7 @@ function WorkingWithArrays() {
             />
             <a href={`${API}/${id}/title/${title}`}
                 className="btn btn-primary me-2">
-                Update Title </a>
+                Update Title  </a>
 
             <input
                 value={todo.id}
@@ -166,24 +244,49 @@ function WorkingWithArrays() {
             <a
                 href={`${API}/${todo.id}/title/${todo.title}`}
                 className="btn btn-primary me-2" >
-                Update Title to {todo.title}
+                Update Title to {todo.title} AND EXTRA CREDIT!
             </a>
 
-            <h3>Extra Credit completed</h3>
+            <h3>Extra Credit Array Todo</h3>
             <h4>update description and checkbox for completed.</h4>
+
+
 
             <input className="form-control"
                 type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
             />
-            <a href={`${API}/${id}/title/${title}`}
+            <a href={`${API}/${id}/description/${description}`}
                 className="btn btn-primary me-2">
                 Update description </a>
 
-            <input className="form-check-input" type="checkbox" onChange={(e) => setTodo
-                ({ ...todo, completed: e.target.value })} />
-            Press this to change completed status
+
+            <label>
+                <input className="form-check-input" type="checkbox" onChange={(e) => {
+                    fetch(`${API}/${id}/completed/${completed}`)
+                    setCompleted
+                        (e.target.checked)
+                }} />
+                Press this to change completed status
+            </label>
+
+            {/*             
+            <label>
+                <input className="form-check-input" type="checkbox" onChange={(e) => {
+                    fetch(`${URL}/completed/${e.target.checked}`)
+                    setAssignment
+                        ({ ...assignment, completed: e.target.checked })
+                }} />
+                Press this to change completed status
+
+            </label> */}
+
+
+
+
+
+
 
 
 

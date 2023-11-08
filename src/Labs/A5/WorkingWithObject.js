@@ -55,9 +55,18 @@ function WorkingWithObjects() {
                 value={assignment.score}
                 className="form-control mb-2 w-75"
                 type="text" />
-            <input className="form-check-input" type="checkbox" onChange={(e) => setAssignment
-                ({ ...assignment, completed: e.target.value })} />
-            Press this to change completed status
+            <label>
+                <input className="form-check-input" type="checkbox" onChange={(e) => {
+                    fetch(`${URL}/completed/${e.target.checked}`)
+                    setAssignment
+                        ({ ...assignment, completed: e.target.checked })
+                }} />
+                Press this to change completed status
+
+            </label>
+
+
+
 
 
 
