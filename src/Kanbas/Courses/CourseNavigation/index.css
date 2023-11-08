@@ -1,0 +1,22 @@
+/* overriding bootstrap override */
+/* if together in class then apply this */
+.wd-course-navigation.list-group {
+    border-radius: 0;
+}
+/* list group item inside course navigation class then apply */
+.wd-course-navigation .list-group-item {
+  
+    color: red;
+    text-decoration: none;
+    background-color: white;
+    border: none;
+   
+}
+
+.wd-course-navigation .list-group-item.active {
+    color: black;
+    background-color: white;
+    border-color: white;;
+    border-left: 2px solid black;
+
+}

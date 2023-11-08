@@ -1,0 +1,38 @@
+.wd-kanbas-navigation {
+    background-color: black;
+    padding: 0px;
+    list-style: none;
+    height: 100vh;
+    margin: 0px;
+    border-radius: 0;
+    position: flex;
+    
+}
+/* list group item inside course navigation class then apply */
+.wd-kanbas-navigation .list-group-item {
+  
+    color: red;
+    text-decoration: none;
+    background-color: black;
+    border: none;
+    font-size: 1.0em;
+    text-align: center;
+    padding-top: 5px;
+   
+}
+/* wd-icon inside list group item inside Kanbas navigation class then apply */
+.wd-kanbas-navigation .list-group-item .wd-icon {
+    font-size: 1.75em;
+    
+}
+.wd-kanbas-navigation .list-group-item.active  {
+    
+    color: red;
+    background-color: white;
+    border-color: white;;
+    border: 2px solid white
+
+} 
+
+
+
