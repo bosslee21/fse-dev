@@ -8,8 +8,9 @@ import imgRS103 from './Images/RS103.jpg';
 import imgRS104 from './Images/RS104.jpg';
 import imgRS105 from './Images/RS105.jpg';
 import imgRS106 from './Images/RS106.jpg';
-import axios from "axios";
-import { async } from "q";
+
+
+import * as client from "../Courses/client";
 
 
 // Function to generate image URLs based on the course name
@@ -33,6 +34,7 @@ function getImageUrl(courseId) {
 function Dashboard() {
     const [courses, setCourses] = useState([]);
 
+    // local form where we can edit the course for creating / edit
     const [course, setCourse] = useState({
         name: "New Course", number: "New Number",
         startDate: "2023-09-10", endDate: "2023-12-15",
@@ -40,34 +42,49 @@ function Dashboard() {
 
 
     const fetchCourses = async () => {
-        const response = await axios.get("http://localhost:4000/api/courses");
-        // console.log(response.data);
-        setCourses(response.data);
+        // const response = await axios.get("http://localhost:4000/api/courses");
+        const courses = await client.fetchCourses();
+        setCourses(courses);
 
     };
 
-
-
     const deleteCourse = async (id) => {
-        console.log(id)
-        const response = await axios.delete(
-            `http://localhost:4000/api/courses/${id}`
-        );
-        setCourses(courses.filter((course) => course._id !== id));
+        // const response = await axios.delete(
+        //     `http://localhost:4000/api/courses/${id}`
+        // );
+        try {
+            await client.deleteCourse(id); // ignore the response. 
+            setCourses(courses.filter((course) => course._id !== id));
+
+        }
+        catch (error) {
+            console.log(error);
+        }
+
         // Consider handling the response here, if necessary
     };
 
     const addNewCourse = async () => {
-        const response = await axios.post("hyyp://localhost:4000/api/courses", course);
-        setCourses([response.data, ...setCourses]); // since its unshift in the server side we need to add it to beggging.
+        // const response = await axios.post("http://localhost:4000/api/courses", course);
+        const newCourse = await client.addNewCourse(course);
+        setCourses([newCourse, ...courses]); // since its unshift in the server side we need to add it to beggging.
     }
+    // ask quesiton about course._id and  how the body()course is being sent to the server
     const updateCourse = async () => {
-        const response = await axios.put(
-            `http://localhost:4000/api/courses/${course._id}`, course
-        );
-        setCourses(
-            courses.map((c) => (c._id === course._id ? course : c))
-        )
+        // const response = await axios.put(
+        //     `http://localhost:4000/api/courses/${course._id}`, course
+        // );
+        try{
+            await client.updateCourse(course);
+            setCourses(
+                courses.map((c) => (c._id === course._id ? course : c))
+            )
+
+        }
+        catch(error){
+            console.log(error);
+        }
+       
     }
 
 

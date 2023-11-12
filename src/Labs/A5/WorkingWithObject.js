@@ -40,7 +40,7 @@ function WorkingWithObjects() {
                 className="form-control mb-2 w-75"
                 type="text" />
 
-
+                <h3>Extra Credit</h3>
             <a
                 href={`${URL}/score/${assignment.score}`}
                 className="btn btn-primary me-2 float-end"

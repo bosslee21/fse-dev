@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import db from "../../Database";
+
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlinePlusSquare } from "react-icons/ai";
@@ -10,25 +10,46 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   deleteAssignment, setAssignment
 } from "./assignmentsReducer";
+// finsiehd extra credit for fetch and delete.
+import * as client from "./client";
 
 function Assignments() {
   const { courseId } = useParams();
-  // const assignments = db.assignments;
-  // const courseAssignments = assignments.filter(
-  //   (assignment) => assignment.course === courseId);
+
+  const[assignments,setAssignments] = useState([]); //array
+  // const[assignment,setAssignment] = useState({
+  //   title: "New Assignment", description: "New Description",
+  //   _id: new Date().getTime().toString(),
+  //   startDate: "2023-09-10", endDate: "2023-12-15",
+  // });
+
+const fetchAssignment = async () => {
+  const serverAssignments = await client.fetchAssignment(courseId); // use Param Id to fetch. 
+  setAssignments(serverAssignments);
+};
+
+const deleteAssignment = async (aid) => {
+  console.log(aid);
+  
+  try {
+    await client.deleteAssignment(aid); // ignore the response.
+    setAssignments(assignments.filter((assignment) => assignment._id !== aid));
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
 
 
+useEffect(() => {
+  fetchAssignment();
+}, []);
 
-  const assignments = useSelector((state) => state.assignmentsReducer.assignments);
-  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+
   const dispatch = useDispatch();
 
-  console.log(assignments)
-  console.log(assignment)
-
   const courseAssignments = assignments.filter((as) => as.course === courseId);
-  console.log(typeof courseAssignments)
-  console.log(courseAssignments)
+ 
 
 
   return (
@@ -74,7 +95,10 @@ function Assignments() {
                 <div className="d-flex flex-row">
                   <div>
                     <button className="btn btn-danger float-middle" style={{ marginLeft: 6 }}
-                      onClick={() => dispatch(deleteAssignment({ assignment }))}>
+                      onClick={(event) => {
+                        event.preventDefault();
+                        deleteAssignment(assignment._id)}
+                      } >
                       Delete
                     </button>
 

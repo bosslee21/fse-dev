@@ -9,7 +9,6 @@ function WorkingWithArrays() {
     const [id, setId] = useState(1);
     const [title, setTitle] = useState("empty")
     const [description, setDescription] = useState("new Description")
-    const [completed, setCompleted] = useState(false)
     const [todo, setTodo] = useState({
         id: 1,
         title: "NodeJS Assignment",
@@ -85,7 +84,7 @@ function WorkingWithArrays() {
         try {
             const response = await axios.put(
                 `${API}/${todo.id}`, todo2);
-            setTodo2(todo.map((t) => (
+            setTodo2(todo2.map((t) => (
                 t.id === todo.id ? todo : t)));
             setTodo2({});
         } catch (error) {
@@ -98,7 +97,15 @@ function WorkingWithArrays() {
 
     return (
         <div>
+            <hr></hr>
             <h1>Todos from Server + Following Lab</h1>
+        
+
+            <h4>Retrieving Arrays</h4>
+            <a href={API} className="btn btn-primary me-2">
+                Get Todos
+            </a>
+            <hr></hr>
             {errorMessage && (
                 <div className="alert alert-danger mb-2 mt-2">
                     {errorMessage}
@@ -141,6 +148,7 @@ function WorkingWithArrays() {
                 className="btn btn-danger float-end ms-2">
                 Delete
             </button>
+            
 
             <button onClick={updateTodo2}>
                 Update Todo
@@ -153,10 +161,10 @@ function WorkingWithArrays() {
             <button onClick={postTodo} >
                 Post Todo
             </button>
-            <button className="btn btn-primary" onClick={createTodo}>Create Todo</button>
-            <button className="btn btn-primary" onClick={postTodo}>PostT Todo</button>
+            <button className="btn btn-primary" onClick={createTodo}>Create Todo using .get</button>
+            <button className="btn btn-primary" onClick={postTodo}>PostT Todo using .post</button>
 
-            <button className="btn btn-warning" onClick={() => updateTodo(id, title)}>update Title</button>
+            <button className="btn btn-warning" onClick={() => updateTodo(id, title)}>update Title using put</button>
             <input
                 className="form-control"
                 value={title}
@@ -166,7 +174,6 @@ function WorkingWithArrays() {
                 {todo2.map((tdo) => (
                     <li className="list-group-item" key={tdo.id}>
                         <button className="btn btn-danger float-end" onClick={() => deleteTodo(tdo.id)}>Delete Todo</button>
-
                         {tdo.title}
                         id = {tdo.id}
                     </li>
@@ -174,11 +181,15 @@ function WorkingWithArrays() {
 
             </ul>
 
-            <h3>Working with Arrays</h3>
-
-            <h4>Retrieving Arrays</h4>
-            <a href={API} className="btn btn-primary me-2">
-                Get Todos
+            
+            <h4>  Set ID HERE FOR CRUD METHOD : /Retrieving an Item from an Array by ID</h4>
+            <input className="form-control"
+                value={id}
+                onChange={(e) => setId(e.target.value)}
+            />
+            <a href={`${API}/${id}`}
+                className="btn btn-primary me-2">
+                Get Todo by ID /This is where set ID to CRUD for LAB Do not press this if using CRUD
             </a>
 
 
@@ -187,17 +198,9 @@ function WorkingWithArrays() {
                 className="btn btn-primary me-2">
                 Create Todo
             </a>
-            <h4>Retrieving an Item from an Array by ID</h4>
-            <input className="form-control"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
-            />
+          
 
-            <a href={`${API}/${id}`}
-                className="btn btn-primary me-2">
-                Get Todo by ID /This is where set to CRUD for LAB
-            </a>
-
+            
             <h3>Filtering Array Items When Completed is true</h3>
             <a href={`${API}?completed=true`}
                 className="btn btn-primary me-2" >
@@ -213,8 +216,8 @@ function WorkingWithArrays() {
             />
             <a href={`${API}/${id}/title/${title}`}
                 className="btn btn-primary me-2">
-                Update Title  </a>
-
+                Update Title using .get  </a>
+            <hr></hr>
             <input
                 value={todo.id}
                 placeholder="Enter ID"
@@ -229,6 +232,7 @@ function WorkingWithArrays() {
                 className="btn btn-primary me-2">
                 Delete Todo with ID = {todo.id}
             </a>
+            <hr></hr>
 
 
 
@@ -246,6 +250,7 @@ function WorkingWithArrays() {
                 className="btn btn-primary me-2" >
                 Update Title to {todo.title} AND EXTRA CREDIT!
             </a>
+            <hr></hr>
 
             <h3>Extra Credit Array Todo</h3>
             <h4>update description and checkbox for completed.</h4>
@@ -264,45 +269,12 @@ function WorkingWithArrays() {
 
             <label>
                 <input className="form-check-input" type="checkbox" onChange={(e) => {
-                    fetch(`${API}/${id}/completed/${completed}`)
-                    setCompleted
-                        (e.target.checked)
+                    fetch(`${API}/${id}/completed/${e.target.checked}`)
+                    setTodo
+                        ({...todo, completed: e.target.checked})
                 }} />
                 Press this to change completed status
             </label>
-
-            {/*             
-            <label>
-                <input className="form-check-input" type="checkbox" onChange={(e) => {
-                    fetch(`${URL}/completed/${e.target.checked}`)
-                    setAssignment
-                        ({ ...assignment, completed: e.target.checked })
-                }} />
-                Press this to change completed status
-
-            </label> */}
-
-
-
-
-
-
-
-
-
-            {/*  check this 
-            <a href={`${API}/${id}`}
-                className="btn btn-primary me-2">
-                Get Todo by ID
-            </a>
-            <input className="form-control"
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
-            <a href={`${API}/${id}/title/${title}`}
-                className="btn btn-primary me-2">
-                Update Title </a> */}
 
 
         </div >

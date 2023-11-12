@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { useParams, Routes,Route, Navigate, useLocation } from "react-router";
 import db from "../Database";
 import JsonPre from "../../Labs/A3/JsonPre";
@@ -10,6 +10,7 @@ import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 import {RxHamburgerMenu} from "react-icons/rx";
+import * as client from "./client";
 
 
 function Courses() {
@@ -18,8 +19,16 @@ function Courses() {
     // const {kanbas,courses,id, screenpath} = pathname.split("/");
     // splitting the pathname to get the Course navigation path
     const path = pathname.split("/")[4];
-    const course = db.courses.find((course) => course._id === courseId);
-   
+    const [course, setCourse] = useState({});
+    // const course = db.courses.find((course) => course._id === courseId);
+    const fetchCourse = async () => {
+        const course = await client.fetchCourse(courseId);
+        setCourse(course);
+    }
+
+    useEffect(() => {
+        fetchCourse();
+    },[]);
     // <div className="overflow-y-scroll position-fixed bottom-0 end-0"></div>
     return (
       
