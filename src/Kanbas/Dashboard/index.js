@@ -36,8 +36,11 @@ function Dashboard() {
 
     // local form where we can edit the course for creating / edit
     const [course, setCourse] = useState({
+        _id: new Date().getTime().toString(),
         name: "New Course", number: "New Number",
         startDate: "2023-09-10", endDate: "2023-12-15",
+       
+       
     });
 
 
@@ -67,6 +70,7 @@ function Dashboard() {
     const addNewCourse = async () => {
         // const response = await axios.post("http://localhost:4000/api/courses", course);
         const newCourse = await client.addNewCourse(course);
+        console.log(newCourse)
         setCourses([newCourse, ...courses]); // since its unshift in the server side we need to add it to beggging.
     }
     // ask quesiton about course._id and  how the body()course is being sent to the server

@@ -27,6 +27,8 @@ export const deleteCourse = async (id) => {
 
 export const addNewCourse = async (course) => {
     const response = await axios.post("http://localhost:4000/api/courses", course);
+    console.log("New response.data:")
+    console.log(response.data)
     return response.data;
 }
 // ask quesiton about course._id and  how the body()course is being sent to the server

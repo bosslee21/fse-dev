@@ -56,7 +56,7 @@ const modulesSlice = createSlice({
         },
 
 
-        // not working. 
+        
         updateModule(state, action) {
             console.log("UpdateModule")
             const { courseId, lesson } = action.payload;

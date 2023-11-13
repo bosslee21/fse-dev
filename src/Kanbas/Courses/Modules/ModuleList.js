@@ -37,15 +37,18 @@ function ModuleList() {
     _id: new Date().getTime(),
   });
 
+  // fetching modules from the module
   const fetchModules = async () => {
     const serverModules = await client.fetchModules(); // use Param Id to fetch. 
+    console.log(serverModules)
     setModules(serverModules);
    
   }
-  
+  // fetching module from the course
   // Setting module state to the modules array from the Client server database.
   const fetchModule = async () => {
     const serverModule = await client.fetchModule(courseId); // use Param Id to fetch. 
+    console.log(serverModule)
     setModule(serverModule);
     
   }
@@ -86,9 +89,9 @@ function ModuleList() {
 
   const updateModule = async (courseId, Llesson) => {
     try{
-      const updatedLesson = await client.updateLesson(courseId, Llesson);
+      const updatedLesson = await client.updateLesson(courseId, lesson);
 
-      setModule(modules.lessons.map((les) => les._id === Llesson._id ? updatedLesson : les));
+      setModule(modules.lessons.map((les) => les._id === lesson._id ? updatedLesson : les));
       setLesson({...lesson})
 
     }

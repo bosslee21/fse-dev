@@ -8,9 +8,17 @@ export const  fetchModules = async () => {
 };
 
 export const  fetchModule = async (courseId) => {
-    const response = await axios.get(`${MODULES_URL}/${courseId}`)
+    const response = await axios.get(`${COURSE_URL}/${courseId}/module`)
     return response.data;
 };
+
+// 147:55 
+export const addNewModule = async(courseId, module) => {
+    const response = await axios.post(`${COURSE_URL}/${courseId}`, module)
+    
+    return response.data;
+}
+
 // given the courseId retrieve all the lessons for that course
 export const findLessondForCourse = async (courseId) => {
     const response = await axios.get(`${MODULES_URL}/${courseId}/lessons`)
@@ -23,6 +31,7 @@ export const findLessonWithLessonId = async (courseId, lessonId) => {
 }
 
 
+// 147:55 
 export const addLesson = async (courseId, lesson) => {
     const response = await axios.post(`${MODULES_URL}/${courseId}/lessons`, lesson)
     console.log(response.data)
