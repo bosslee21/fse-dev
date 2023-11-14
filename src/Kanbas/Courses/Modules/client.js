@@ -1,6 +1,10 @@
 import axios from "axios";
-const COURSE_URL = "http://localhost:4000/api/courses";
-const MODULES_URL = "http://localhost:4000/api/modules";
+// const COURSE_URL = "http://localhost:4000/api/courses";
+// const MODULES_URL = "http://localhost:4000/api/modules";
+
+const COURSE_URL = "https://kanbas-server-app.onrender.com/api/courses";
+const MODULES_URL = "https://kanbas-server-app.onrender.com/api/modules";
+
 
 export const  fetchModules = async () => {
     const response = await axios.get(`${MODULES_URL}`)

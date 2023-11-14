@@ -1,10 +1,9 @@
 // export Dashboard server. we dont need the setCourse which lives in UI
+import axios from "axios";
 const COURSE_URL = "https://kanbas-server-app.onrender.com/api/courses";
 
 
 
-
-import axios from "axios";
 export const fetchCourses = async () => {
     const response = await axios.get(`${COURSE_URL}`);
     // console.log(response.data);
