@@ -4,7 +4,9 @@ function WorkingWithArrays() {
     const [errorMessage, setErrorMessage] = useState(null);
 
 
-    const API = "http://localhost:4000/a5/todos";
+    // const API = "http://localhost:4000/a5/todos";
+    const API = "https://kanbas-server-app.onrender.com/a5/todos";
+
 
     const [id, setId] = useState(1);
     const [title, setTitle] = useState("empty")
@@ -45,17 +47,17 @@ function WorkingWithArrays() {
 
     // compiler do the promise and then for us
     const fetchTodos = async () => {
-        const response = await axios.get("http://localhost:4000/a5/todos");
+        const response = await axios.get("https://kanbas-server-app.onrender.com/a5/todos");
         setTodo2(response.data);
     }
 
     const createTodo = async () => {
-        const response = await axios.get("http://localhost:4000/a5/todos/create");
+        const response = await axios.get("https://kanbas-server-app.onrender.com/a5/todos/create");
         setTodo2(response.data);
 
     }
     const postTodo = async () => {
-        const response = await axios.post("http://localhost:4000/a5/todos", {
+        const response = await axios.post("https://kanbas-server-app.onrender.com/a5/todos", {
             title: title,
         });
         setTodo2(response.data);

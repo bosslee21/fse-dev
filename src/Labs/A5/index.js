@@ -5,7 +5,7 @@ function A5() {
     return (
         <div className="list-group">
 
-            <a href="http://localhost:4000/a5/welcome"
+            <a href="https://kanbas-server-app.onrender.com/a5/welcome"
                 className="list-group-item">
                 Welcome
             </a>
