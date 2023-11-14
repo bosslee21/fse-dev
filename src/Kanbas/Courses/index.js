@@ -23,7 +23,6 @@ function Courses() {
     // const course = db.courses.find((course) => course._id === courseId);
     const fetchCourse = async () => {
         const course = await client.fetchCourse(courseId);
-        console.log(course)
         setCourse(course);
     }
 

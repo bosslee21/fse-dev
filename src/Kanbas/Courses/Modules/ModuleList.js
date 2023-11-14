@@ -1,19 +1,11 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import { AiFillCheckCircle } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./index.css";
-
-import { useSelector, useDispatch } from "react-redux";
-import {
-  addLesson,
-  deleteLesson,
-  updateModule,
-  setLesson,
-} from "./modulesReducer";
 import * as client from "./client";
+import Modules from ".";
 
 //show
 function ModuleList() {
@@ -40,7 +32,6 @@ function ModuleList() {
   // fetching modules from the module
   const fetchModules = async () => {
     const serverModules = await client.fetchModules(); // use Param Id to fetch. 
-    console.log(serverModules)
     setModules(serverModules);
    
   }
@@ -48,7 +39,6 @@ function ModuleList() {
   // Setting module state to the modules array from the Client server database.
   const fetchModule = async () => {
     const serverModule = await client.fetchModule(courseId); // use Param Id to fetch. 
-    console.log(serverModule)
     setModule(serverModule);
     
   }
@@ -57,11 +47,25 @@ function ModuleList() {
     setLessons(serverLessons);
   }
  // only Render once when page loads to prevent infinite loop.
-  useEffect(() => {
-    fetchModules();
-    fetchModule();
-    fetchLessons();
-}, [module]); //  This is the dependency array. It's a list of values (usually props or state) that the effect depends on. The effect will only re-run if one of these values changes.
+//   useEffect(() => {
+//     fetchModules();
+//     fetchModule();
+//     fetchLessons();
+// }, [module]); //  This is the dependency array. It's a list of values (usually props or state) that the effect depends on. The effect will only re-run if one of these values changes.
+
+useEffect(() => {
+  fetchModules();
+}, [module]); // Empty dependency array means this runs once on mount
+
+
+useEffect(() => {
+  fetchModule();
+}, []); // Dependency array with 'module'
+
+// Fetching lessons - Assuming this also depends on the 'module' state
+useEffect(() => {
+  fetchLessons();
+}, []); // Dependency array with 'module'
 
   
 

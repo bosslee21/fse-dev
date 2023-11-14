@@ -246,7 +246,7 @@ function WorkingWithArrays() {
                 className="form-control mb-2"
                 type="text"
             />
-            <h3>Updating an Item in an Array</h3>
+            <h3>Updating an Item in an Array use TODO DELETE BUTTON TO SET ID </h3>
             <a
                 href={`${API}/${todo.id}/title/${todo.title}`}
                 className="btn btn-primary me-2" >
@@ -256,6 +256,7 @@ function WorkingWithArrays() {
 
             <h3>Extra Credit Array Todo</h3>
             <h4>update description and checkbox for completed.</h4>
+            <h4> USE SET CRUD TODO BELOW LIST to SET ID  </h4>
 
 
 
