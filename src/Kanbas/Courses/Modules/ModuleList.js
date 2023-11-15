@@ -55,7 +55,7 @@ function ModuleList() {
 
 useEffect(() => {
   fetchModules();
-}, [module, lessons]); // Empty dependency array means this runs once on mount
+}, [module]); // Empty dependency array means this runs once on mount
 
 
 useEffect(() => {
