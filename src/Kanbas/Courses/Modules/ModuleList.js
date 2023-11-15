@@ -55,7 +55,7 @@ function ModuleList() {
 
 useEffect(() => {
   fetchModules();
-}, [module]); // Empty dependency array means this runs once on mount
+}, [module, lessons]); // Empty dependency array means this runs once on mount
 
 
 useEffect(() => {
@@ -91,13 +91,14 @@ useEffect(() => {
     setModule({...module, lessons: newLessons } )
   }
 
-  const updateModule = async (courseId, Llesson) => {
+  const updateModule = async (courseId, lesson) => {
     try{
       const updatedLesson = await client.updateLesson(courseId, lesson);
-
+      fetchModules(); 
       setModule(modules.lessons.map((les) => les._id === lesson._id ? updatedLesson : les));
-      setLesson({...lesson})
-
+      // setLesson({...lesson})
+     
+      
     }
     catch(error) {
       console.log(error)
