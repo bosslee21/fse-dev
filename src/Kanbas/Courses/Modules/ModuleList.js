@@ -52,8 +52,8 @@ function ModuleList() {
     const serverLessons = await client.findLessondForCourse(courseId); // use Param Id to fetch.
     dispatch(setLessons(serverLessons));
   }
-
-  const handleAddLesson = async (courseId, lesson) => {
+ 
+  const handleAddLessonold = async (courseId, lesson) => {
 
     const newLesson = await client.addLesson(courseId, lesson);
     
@@ -62,32 +62,53 @@ function ModuleList() {
     }))
     
   }
+
+  const handleAddLesson = () => {
+    client.addNewModule(courseId, lesson).then((newLesson) => {
+      dispatch(setModule({
+        ...module, 
+        lessons: [...module.lessons, newLesson] // Spread existing lessons and add the new lesson
+      }));
+    });
+  };
+
 // need work
-  const handleDeleteLesson = async (courseId, lesson) => {
-   
-    const newLesson = await client.deleteLesson(courseId, lesson);
-    
-    const findModule = modules.find((m) => m.course === courseId);
-
-    const newLessons = findModule.lessons.filter((les) => les._id !== lesson._id);
+const handleDeleteLesson = async (courseId, lesson) => {
+  await client.deleteLesson(courseId, lesson);
   
-    
-    dispatch(setModule({...module, lessons: newLessons }) )
-  }
+  const findModule = modules.find((m) => m.course === courseId);
 
-  const handleUpdateModule = async (courseId, lesson) => {
-    try{
-      const updatedLesson = await client.updateLesson(courseId, lesson);
-      fetchModules(); 
-      dispatch(setModule(modules.lessons.map((les) => les._id === lesson._id ? updatedLesson : les)));
-      // setLesson({...lesson})
-     
-      
-    }
-    catch(error) {
-      console.log(error)
-    }
+  if (findModule) {
+      const newLessons = findModule.lessons.filter((les) => les._id !== lesson._id);
+
+      dispatch(setModule({...findModule, lessons: newLessons }));
   }
+};
+
+
+const handleUpdateModule = async (courseId, lesson) => {
+  try {
+      const updatedLesson = await client.updateLesson(courseId, lesson);
+
+      await fetchModules(); 
+
+      const updatedModules = modules.map(module => {
+          if (module.course === courseId) {
+              return {
+                  ...module,
+                  lessons: module.lessons.map(les => les._id === lesson._id ? updatedLesson : les)
+              };
+          }
+          return module;
+      });
+
+      dispatch(setModules(updatedModules)); 
+
+  } catch (error) {
+      console.log(error);
+  }
+};
+
 
 
 
@@ -127,17 +148,17 @@ useEffect(() => {
 
 
         <input value={lesson.name} className="form-control" style={{ marginBottom: 4 }}
-          onChange={(e) => dispatch(setLesson)({
+          onChange={(e) => dispatch(setLesson({
 
             ...lesson, name: e.target.value
-          })}
+          }))}
         />
         <textarea value={lesson.description} className="form-control" rows={3}
-          onChange={(e) => dispatch(setLesson)({
+          onChange={(e) => dispatch(setLesson({
 
 
             ...lesson, description: e.target.value
-          })}
+          }))}
         />
       </li>
 
