@@ -30,7 +30,7 @@ export const deleteCourse = async (id) => {
 };
 
 export const addNewCourse = async (course) => {
-    const response = await axios.post("https://kanbas-server-app.onrender.com/api/courses", course);
+    const response = await axios.post(`${COURSE_URL}`, course);
     console.log("New response.data:")
     console.log(response.data)
     return response.data;
@@ -38,7 +38,7 @@ export const addNewCourse = async (course) => {
 // ask quesiton about course._id and  how the body()course is being sent to the server
 export const updateCourse = async (course) => {
     const response = await axios.put(
-        `https://kanbas-server-app.onrender.com/api/courses/${course._id}`, course
+        `${COURSE_URL}/${course._id}`, course
     );
     return response.data;
    

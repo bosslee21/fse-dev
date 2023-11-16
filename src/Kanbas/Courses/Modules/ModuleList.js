@@ -5,7 +5,7 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./index.css";
 import * as client from "./client";
-import Modules from ".";
+
 
 //show
 function ModuleList() {
@@ -60,12 +60,12 @@ useEffect(() => {
 
 useEffect(() => {
   fetchModule();
-}, []); // Dependency array with 'module'
+}); // Dependency array with 'module'
 
 // Fetching lessons - Assuming this also depends on the 'module' state
 useEffect(() => {
   fetchLessons();
-}, []); // Dependency array with 'module'
+}); // Dependency array with 'module'
 
   
 
