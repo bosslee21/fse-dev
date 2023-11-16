@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import db from "../../Database";
+
 
 
 // 
 const initialState = {
-    modules: db.modules,
+    modules: [],
+    module:{},
+    lessons: [],
 
     lesson: {
         _id: new Date().getTime(),
@@ -20,7 +22,6 @@ const initialState = {
 // action is new payload 
 // state is the current state which is the current state in modules / store
 
-
 const modulesSlice = createSlice({
     name: "modules",
     initialState,
@@ -30,6 +31,7 @@ const modulesSlice = createSlice({
 
             const { courseId, lesson } = action.payload; // destructuring the action.payload courseId , lesson
             console.log(lesson)
+            state.module = [...state.modules, lesson ]
             let module = state.modules.find((m) => m.course === courseId); // finding the module that we want to add lesson
             const newLessons = [...module.lessons, lesson]; // append the lesson to the module.lessons
             const updatedModule = { ...module, lessons: newLessons } // override the lesson in the module
@@ -38,6 +40,8 @@ const modulesSlice = createSlice({
 
             state.modules = [filterModule, updatedModule]; // override the module in the modules
         },
+
+        
 
         deleteLesson(state, action) {
             console.log("DeleteLesson")
@@ -78,28 +82,32 @@ const modulesSlice = createSlice({
 
         },
 
-
-        // editLesson(state,action) {
-        //     const {courseId, lesson} = action.payload;
-        //     state.lesson = lesson
-
-        // }
-
         setLesson(state, action) {
             console.log("SetLesson/Edit Button")
-
-
             const newLesson = action.payload // (lesson with updated )
-
             state.lesson = newLesson; // set the lesson to the newLesson
 
 
         },
+
+        setModules(state,action) {
+            const newModules = action.payload;
+            state.modules = newModules
+        },
+
+        setModule(state, action) {
+            const newModule = action.payload;
+            state.module = newModule
+        },
+        setLessons(state,action) {
+            const newLessons = action.payload;
+            state.lessons = newLessons
+        }
     },
 });
 
 // Exports
-export const { addLesson, deleteLesson, updateModule, setLesson } = modulesSlice.actions;
+export const { addLesson, deleteLesson, updateModule, setLesson,setModules,setModule, setLessons } = modulesSlice.actions;
 export default modulesSlice.reducer;
 
 // Things to ask :
@@ -107,3 +115,39 @@ export default modulesSlice.reducer;
 // does not know if update modules works.
 
 //check addLesson,deleteLesson,updateModule,setLesson
+// ----
+// const addLesson = async (courseId, lesson) => {
+
+//     const newLesson = await client.addLesson(courseId, lesson);
+    
+//     setModule({
+//       ...module, lessons: newLesson
+//     })
+    
+//   }
+// // need work
+//   const deleteLesson = async (courseId, lesson) => {
+   
+//     const newLesson = await client.deleteLesson(courseId, lesson);
+    
+//     const findModule = modules.find((m) => m.course === courseId);
+
+//     const newLessons = findModule.lessons.filter((les) => les._id !== lesson._id);
+  
+    
+//     setModule({...module, lessons: newLessons } )
+//   }
+
+//   const updateModule = async (courseId, lesson) => {
+//     try{
+//       const updatedLesson = await client.updateLesson(courseId, lesson);
+//       fetchModules(); 
+//       setModule(modules.lessons.map((les) => les._id === lesson._id ? updatedLesson : les));
+//       // setLesson({...lesson})
+     
+      
+//     }
+//     catch(error) {
+//       console.log(error)
+//     }
+//   }

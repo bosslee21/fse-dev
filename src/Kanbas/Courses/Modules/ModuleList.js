@@ -5,53 +5,93 @@ import { AiFillCheckCircle } from "react-icons/ai";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import "./index.css";
 import * as client from "./client";
-import Modules from ".";
 
-//show
+import { useSelector, useDispatch } from "react-redux";
+import {
+  addLesson,
+  deleteLesson,
+  updateModule,
+  setLesson,
+  setModules,
+  setModule,
+  setLessons,
+} from "./modulesReducer";
+
 function ModuleList() {
 
-  //new  2 hour : 
-  // const [modules, setModules] = useState([]);
   
   
 
   const { courseId } = useParams();
-  const [modules,setModules] = useState([]);  //array
-  const [module, setModule] = useState({}); //object
-  const [lessons, setLessons] = useState ([]); // array of lessons
+  // const [modules,setModules] = useState([]);  //array
+  // const [module, setModule] = useState({}); //object
+  // const [lessons, setLessons] = useState ([]); // array of lessons
  
-  // console.log(module)
-  // console.log(lessons)
+  const modules = useSelector((state) => state.modulesReducer.modules);
+  const module = useSelector((state) => state.modulesReducer.module);
+  const lessons = useSelector((state) => state.modulesReducer.lessons);
+  const lesson = useSelector((state) => state.modulesReducer.lesson);
+  const dispatch = useDispatch();
   
-  
-  const [lesson,setLesson] = useState({
-    name: "New Lesson", description: "New Description",
-    _id: new Date().getTime(),
-  });
+ 
 
   // fetching modules from the module
   const fetchModules = async () => {
     const serverModules = await client.fetchModules(); // use Param Id to fetch. 
-    setModules(serverModules);
+    dispatch(setModules(serverModules));
    
   }
   // fetching module from the course
   // Setting module state to the modules array from the Client server database.
   const fetchModule = async () => {
     const serverModule = await client.fetchModule(courseId); // use Param Id to fetch. 
-    setModule(serverModule);
+    dispatch(setModule(serverModule));
     
   }
   const fetchLessons = async () => {
     const serverLessons = await client.findLessondForCourse(courseId); // use Param Id to fetch.
-    setLessons(serverLessons);
+    dispatch(setLessons(serverLessons));
   }
- // only Render once when page loads to prevent infinite loop.
-//   useEffect(() => {
-//     fetchModules();
-//     fetchModule();
-//     fetchLessons();
-// }, [module]); //  This is the dependency array. It's a list of values (usually props or state) that the effect depends on. The effect will only re-run if one of these values changes.
+
+  const handleAddLesson = async (courseId, lesson) => {
+
+    const newLesson = await client.addLesson(courseId, lesson);
+    
+    dispatch(setModule({
+      ...module, lessons: newLesson
+    }))
+    
+  }
+// need work
+  const handleDeleteLesson = async (courseId, lesson) => {
+   
+    const newLesson = await client.deleteLesson(courseId, lesson);
+    
+    const findModule = modules.find((m) => m.course === courseId);
+
+    const newLessons = findModule.lessons.filter((les) => les._id !== lesson._id);
+  
+    
+    dispatch(setModule({...module, lessons: newLessons }) )
+  }
+
+  const handleUpdateModule = async (courseId, lesson) => {
+    try{
+      const updatedLesson = await client.updateLesson(courseId, lesson);
+      fetchModules(); 
+      dispatch(setModule(modules.lessons.map((les) => les._id === lesson._id ? updatedLesson : les)));
+      // setLesson({...lesson})
+     
+      
+    }
+    catch(error) {
+      console.log(error)
+    }
+  }
+
+
+
+
 
 useEffect(() => {
   fetchModules();
@@ -69,42 +109,6 @@ useEffect(() => {
 
   
 
-  const addLesson = async (courseId, lesson) => {
-
-    const newLesson = await client.addLesson(courseId, lesson);
-    
-    setModule({
-      ...module, lessons: newLesson
-    })
-    
-  }
-// need work
-  const deleteLesson = async (courseId, lesson) => {
-   
-    const newLesson = await client.deleteLesson(courseId, lesson);
-    
-    const findModule = modules.find((m) => m.course === courseId);
-
-    const newLessons = findModule.lessons.filter((les) => les._id !== lesson._id);
-  
-    
-    setModule({...module, lessons: newLessons } )
-  }
-
-  const updateModule = async (courseId, lesson) => {
-    try{
-      const updatedLesson = await client.updateLesson(courseId, lesson);
-      fetchModules(); 
-      setModule(modules.lessons.map((les) => les._id === lesson._id ? updatedLesson : les));
-      // setLesson({...lesson})
-     
-      
-    }
-    catch(error) {
-      console.log(error)
-    }
-  }
-
 
  
 
@@ -116,20 +120,20 @@ useEffect(() => {
     <ul className="list-group wd-home-list-group">
 
       <li className="list-group-item">
-        <button className="btn btn-success" onClick={() => addLesson( courseId, lesson )} style={{ marginBottom: 4, marginRight: 5 }}>Add</button>
+        <button className="btn btn-success" onClick={() => dispatch(handleAddLesson( courseId, lesson ))} style={{ marginBottom: 4, marginRight: 5 }}>Add</button>
 
-        <button className="btn btn-warning" onClick={() => updateModule( courseId, lesson )} style={{ marginBottom: 4 }} > Update</button>
+        <button className="btn btn-warning" onClick={() => dispatch(handleUpdateModule( courseId, lesson ))} style={{ marginBottom: 4 }} > Update</button>
 
 
 
         <input value={lesson.name} className="form-control" style={{ marginBottom: 4 }}
-          onChange={(e) => setLesson({
+          onChange={(e) => dispatch(setLesson)({
 
             ...lesson, name: e.target.value
           })}
         />
         <textarea value={lesson.description} className="form-control" rows={3}
-          onChange={(e) => setLesson({
+          onChange={(e) => dispatch(setLesson)({
 
 
             ...lesson, description: e.target.value
@@ -154,12 +158,12 @@ useEffect(() => {
                         <div>
                           <li className="list-group-item list-group-item-secondary" style={{ borderRadius: 0 }}><h6>Week {index}
                             <button className="btn btn-success" style={{ marginLeft: 35 }}
-                              onClick={() => (setLesson({ ...lesson }))}>
+                              onClick={() => dispatch((setLesson({ ...lesson })))}>
                               Edit
                             </button>
 
                             <button className="btn btn-danger float-middle" style={{ marginLeft: 4 }}
-                              onClick={() => (deleteLesson(courseId,lesson))}>
+                              onClick={() =>dispatch (handleDeleteLesson(courseId,lesson))}>
                               Delete
                             </button>
 
