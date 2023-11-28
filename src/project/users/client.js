@@ -15,6 +15,11 @@ export const account = async () => {
   return response.data;
 };
 
+export const createUser = async (user) => {
+  const response = await axios.post(`${USER_API}`, user);
+  return response.data;
+};
+
 export const findAllUsers = async () => {
   const response = await axios.get(USER_API);
   return response.data;
