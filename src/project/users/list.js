@@ -13,6 +13,7 @@ function UserList() {
     password: "",
     role: "USER",
   });
+
   const createUser = async () => {
     try {
       const newUser = await client.createUser(user);
@@ -52,6 +53,7 @@ function UserList() {
     fetchUsers();
     fetchCurrentUser();
   }, [setCurrentUser]);
+  console.log(currentUser);
 
   return (
     <div>
@@ -59,6 +61,10 @@ function UserList() {
         <>
           <div>
             <h1>User List</h1>
+            <h2>
+              <p>Current User: {currentUser.username} </p> Role:{" "}
+              {currentUser.role}
+            </h2>
             <table className="table">
               <thead>
                 <tr>
@@ -130,13 +136,6 @@ function UserList() {
                       onClick={createUser}
                     />
                   </td>
-                  <td>
-                    {" "}
-                    <BsFillCheckCircleFill
-                      onClick={updateUser}
-                      className="me-2 text-success fs-1 text"
-                    />
-                  </td>
                 </tr>
               </thead>
             </table>
@@ -157,7 +156,6 @@ function UserList() {
           </div>
         </>
       )}
-
       {currentUser && currentUser.role !== "ADMIN" && (
         <Navigate to="/project/signin" />
       )}

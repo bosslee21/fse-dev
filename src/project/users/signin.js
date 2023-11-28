@@ -11,6 +11,7 @@ function SignIn() {
     try {
       const credentials = { username, password };
       const status = await client.signIn(credentials);
+      console.log(status);
 
       navigate("/project/account");
     } catch (error) {

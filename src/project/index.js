@@ -5,6 +5,7 @@ import Nav from "../Nav";
 import UserDetails from "./users/details";
 import SignIn from "./users/signin";
 import Account from "./users/account";
+import SignUp from "./users/signup";
 
 function Project() {
   const { pathname } = useLocation();
@@ -79,6 +80,7 @@ function Project() {
             <Route path="/users/:userId" element={<UserDetails />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
       </div>
