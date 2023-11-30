@@ -4,8 +4,9 @@ import axios from "axios";
 const request = axios.create({
   withCredentials: true, // turn on cookie support.
 });
+// const API_BASE = process.env.REACT_APP_BASE_URL || "http://localhost:3000";
 
-const API_BASE = process.env.REACT_APP_BASE_URL || "http://localhost:3000";
+const API_BASE = "https://kanbas-server-app-a6.onrender.com";
 const USER_API = `${API_BASE}/api/users`;
 
 export const signIn = async (credentials) => {
